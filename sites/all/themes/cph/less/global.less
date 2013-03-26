@@ -1,0 +1,113 @@
+/*----------------------------------------------------- 	
+	Copyright (C) 2002-2012 by vicom-agency.de
+	VICOM agency, Hamburg
+	Contact: Martin Stutterheim
+   	Web http://vicom-agency.de
+   	E-Mail beratung@vicom-agency.de 
+-----------------------------------------------------
+/* $Revision: 2.61 $ $Date: 2010/09/23 14:04:46 $ */
+/* owner: beratung@vicom-agency.de 
+-----------------------------------------------------*/
+// import Mixins
+@import "elements.less";
+//–––––––––––––––––––––––––––––––––––––––––––––––––
+
+// colors
+	@backsolid: #219ACC;
+	@green-light: #85aa3f;
+	@orange: #ff5900;
+	@gelb: #fdb22b;
+	@grey-light: #c7c1bc;
+	@grey-medium: #8e8377; 
+	@grey-dark: #5d554d;
+	@grey-black: #242424;
+	@beige-light: #f0e8dd;
+	@beige-dark: #e7dfd6;
+	@black: #000000;
+
+		// sets
+		@background-a: @backsolid;
+		@background-b: @beige-light;
+		@background-c: white;
+
+		@accent: @green-light;
+		@active: @grey-dark;
+		
+		@signal: @orange; 
+
+//end color
+// Basics
+body {
+	background-color: white;
+}
+
+// Basics Text 
+body {
+  font: 13px/1.5 Verdana, Helvetica, Arial, sans-serif;
+}
+	// Links
+		a  { 
+
+	  		&:link {}
+	  		&:active {}
+	  		&:visited {}
+	 		&:hover {}
+	}
+	
+.active-trail a {}
+hr {
+}
+
+//
+// Headlines
+//
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+ul ul,
+ol ol {
+  padding-top: 0.5em;
+}
+
+.node ol,
+.node ul {
+  padding-left: 1.2em;
+}
+
+.node ul.inline,
+.node ol.inline {
+  padding-left: 0;
+}
+
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol,
+ul, pre, table, address, fieldset {
+
+}
+
+dt, .admin h3 {
+}
+
+dd {
+}
+// END Text
+
+//Standards 
+.breadcrumb {}
+
+
+.field .field-label {}
+
+
+
+

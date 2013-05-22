@@ -8,41 +8,48 @@
 /* $Revision: 2.61 $ $Date: 2010/09/23 14:04:46 $ */
 /* owner: beratung@vicom-agency.de 
 -----------------------------------------------------*/
+body {
+  background-color: white;
+}
+body {
+  font: 13px/1.5 Verdana, Helvetica, Arial, sans-serif;
+}
+#page-title {
+  background-color: transparent;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
 }
-.page-taxonomy-term .tabs {
-  display: none;
+h1 {
+  font-size: 26px;
 }
-#page-title {
-  padding: 3px;
+h2 {
+  font-size: 20px;
 }
-.views-displays .secondary {
-  float: left;
+ol {
+  list-style: decimal;
 }
-ul.menu li a.active-trail,
-ul.menu li a:active {
-  color: #000000;
-  text-decoration: none;
+ul {
+  list-style: disc;
 }
-.block-without-title {
-  background-color: #ffffff;
-  margin-top: 6px;
+ul ul,
+ol ol {
+  padding-top: 0.5em;
 }
-.small {
-  font-size: 85%;
+.node ol,
+.node ul {
+  padding-left: 1.2em;
 }
-li.active-trail a {
-  color: #000000;
+.node ul.inline,
+.node ol.inline {
+  padding-left: 0;
 }
-ul,
-.block ul,
-.item-list ul {
-  list-style-image: none;
-  list-style-type: none;
+dt,
+.admin h3 {
+  font-size: 15px;
 }

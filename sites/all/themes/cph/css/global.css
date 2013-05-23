@@ -23,13 +23,24 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Verdana, Helvetica, Arial, sans-serif;
+  letter-spacing: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: arial, tahoma, Helvetica, Arial, sans-serif;
 }
 h1 {
   font-size: 26px;
 }
 h2 {
   font-size: 20px;
+}
+h3 {
+  font-size: 14px;
 }
 ol {
   list-style: decimal;
@@ -55,4 +66,16 @@ dt,
 }
 .box {
   margin-bottom: 10px;
+}
+.box-1 {
+  min-height: 300px;
+}
+.box-2 {
+  height: 400px;
+}
+.box-3 {
+  height: 400px;
+}
+.box-4 {
+  height: 400px;
 }

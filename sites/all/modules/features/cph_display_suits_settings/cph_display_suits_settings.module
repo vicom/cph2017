@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CPH Display Suits  Settings feature.
+ */
+
+include_once 'cph_display_suits_settings.features.inc';

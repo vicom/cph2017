@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CPH Panels feature.
+ */
+
+include_once 'cph_panels.features.inc';

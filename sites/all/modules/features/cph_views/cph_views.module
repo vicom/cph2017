@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CPH views feature.
+ */
+
+include_once 'cph_views.features.inc';

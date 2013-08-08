@@ -991,26 +991,8 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'steckbrief';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'panels-onecol';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'regions' => array(
-      'middle' => array(
-        0 => 'steckbrief_name_komplett',
-        1 => 'field_department',
-        2 => 'field_titel',
-        4 => 'field_verbundene_firma',
-      ),
-      'ds_hidden' => array(
-        3 => 'field_surename',
-      ),
-    ),
-    'fields' => array(
-      'steckbrief_name_komplett' => 'middle',
-      'field_department' => 'middle',
-      'field_titel' => 'middle',
-      'field_surename' => 'ds_hidden',
-      'field_verbundene_firma' => 'middle',
-    ),
     'classes' => array(
       'layout_class' => array(
         '' => '',
@@ -1026,6 +1008,24 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'hide_page_title' => '0',
     'page_option_title' => '',
     'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'steckbrief_name_komplett',
+        1 => 'field_department',
+        2 => 'field_titel',
+        3 => 'field_verbundene_firma',
+      ),
+      'ds_hidden' => array(
+        0 => 'field_surename',
+      ),
+    ),
+    'fields' => array(
+      'steckbrief_name_komplett' => 'ds_content',
+      'field_department' => 'ds_content',
+      'field_titel' => 'ds_content',
+      'field_verbundene_firma' => 'ds_content',
+      'field_surename' => 'ds_hidden',
+    ),
   );
   $export['node|steckbrief|full'] = $ds_layout;
 
@@ -1081,18 +1081,8 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'inhalte';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'panels-twocol';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'regions' => array(
-      'left' => array(
-        0 => 'title',
-        1 => 'description',
-      ),
-    ),
-    'fields' => array(
-      'title' => 'left',
-      'description' => 'left',
-    ),
     'classes' => array(),
     'wrappers' => array(
       'left' => 'div',
@@ -1103,6 +1093,16 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'layout_attributes' => '',
     'layout_attributes_merge' => 0,
     'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'description',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'description' => 'ds_content',
+    ),
   );
   $export['taxonomy_term|inhalte|default'] = $ds_layout;
 

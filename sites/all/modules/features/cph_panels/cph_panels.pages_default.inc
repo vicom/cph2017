@@ -114,7 +114,7 @@ function cph_panels_default_page_manager_handlers() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => '',
+      'css_id' => 'aufgabe',
       'css_class' => 'box span6 well well-large',
     );
     $pane->extras = array();

@@ -228,9 +228,9 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'db271743_22',
-      'username' => 'db271743_22',
-      'password' => 'tJler6UP2C',
+      'database' => 'db271743_24',
+      'username' => 'db271743_24',
+      'password' => 'RJLNueTpgg',
       'host' => 'mysql5.just-in-place.com',
       'port' => '',
       'driver' => 'mysql',

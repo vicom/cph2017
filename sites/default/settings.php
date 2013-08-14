@@ -211,7 +211,7 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'cph',
+      'database' => 'cph3',
       'username' => 'root',
       'password' => 'root',
       'host' => 'localhost',

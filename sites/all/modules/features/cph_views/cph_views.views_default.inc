@@ -105,6 +105,14 @@ function cph_views_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Kopfbereich: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -188,7 +196,6 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'aufgabe' => 'aufgabe',
   );
-  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Typ';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
@@ -433,6 +440,427 @@ function cph_views_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'aufgabestatus';
+
+  /* Display: Panel aufgabe */
+  $handler = $view->new_display('panel_pane', 'Panel aufgabe', 'vp_aufgaben');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'table table-hover';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_verantwortlich' => 'field_verantwortlich',
+    'field_kunde' => 'field_kunde',
+    'field_datum' => 'field_datum',
+    'field_aufgabe_status' => 'field_aufgabe_status',
+    'field_aufgabe' => 'field_aufgabe',
+    'field_bemerkung' => 'field_bemerkung',
+    'field_ansprechpartner' => 'field_ansprechpartner',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_verantwortlich' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_kunde' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_datum' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_aufgabe_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_aufgabe' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_bemerkung' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_ansprechpartner' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['empty'] = TRUE;
+  $handler->display->display_options['header']['php']['php_output'] = '';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '- keine Einträge gefunden -';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Feld: Inhalt: verantwortlich */
+  $handler->display->display_options['fields']['field_verantwortlich']['id'] = 'field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['table'] = 'field_data_field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['field'] = 'field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['settings'] = array(
+    'link' => 0,
+  );
+  /* Feld: Inhalt: Kunde */
+  $handler->display->display_options['fields']['field_kunde']['id'] = 'field_kunde';
+  $handler->display->display_options['fields']['field_kunde']['table'] = 'field_data_field_kunde';
+  $handler->display->display_options['fields']['field_kunde']['field'] = 'field_kunde';
+  $handler->display->display_options['fields']['field_kunde']['settings'] = array(
+    'link' => 1,
+  );
+  /* Feld: Inhalt: Datum */
+  $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';
+  $handler->display->display_options['fields']['field_datum']['field'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['label'] = 'Termin/Erledigt';
+  $handler->display->display_options['fields']['field_datum']['settings'] = array(
+    'format_type' => 'tagmini',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Inhalt: Status */
+  $handler->display->display_options['fields']['field_aufgabe_status']['id'] = 'field_aufgabe_status';
+  $handler->display->display_options['fields']['field_aufgabe_status']['table'] = 'field_data_field_aufgabe_status';
+  $handler->display->display_options['fields']['field_aufgabe_status']['field'] = 'field_aufgabe_status';
+  /* Feld: Inhalt: Aufgabe */
+  $handler->display->display_options['fields']['field_aufgabe']['id'] = 'field_aufgabe';
+  $handler->display->display_options['fields']['field_aufgabe']['table'] = 'field_data_field_aufgabe';
+  $handler->display->display_options['fields']['field_aufgabe']['field'] = 'field_aufgabe';
+  /* Feld: Inhalt: Bemerkung */
+  $handler->display->display_options['fields']['field_bemerkung']['id'] = 'field_bemerkung';
+  $handler->display->display_options['fields']['field_bemerkung']['table'] = 'field_data_field_bemerkung';
+  $handler->display->display_options['fields']['field_bemerkung']['field'] = 'field_bemerkung';
+  /* Feld: Inhalt: Ansprechpartner */
+  $handler->display->display_options['fields']['field_ansprechpartner']['id'] = 'field_ansprechpartner';
+  $handler->display->display_options['fields']['field_ansprechpartner']['table'] = 'field_data_field_ansprechpartner';
+  $handler->display->display_options['fields']['field_ansprechpartner']['field'] = 'field_ansprechpartner';
+  $handler->display->display_options['fields']['field_ansprechpartner']['settings'] = array(
+    'link' => 1,
+  );
+  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sortierkriterien: Inhalt: Beitragsdatum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontextfilter: Inhalt: verantwortlich (field_verantwortlich) */
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['id'] = 'field_verantwortlich_target_id';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['table'] = 'field_data_field_verantwortlich';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['field'] = 'field_verantwortlich_target_id';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'aufgabe' => 'aufgabe',
+  );
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Typ';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  /* Filterkriterium: Inhalt: Status (field_aufgabe_status) */
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['id'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['table'] = 'field_data_field_aufgabe_status';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['field'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['value'] = array(
+    38 => '38',
+  );
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['vocabulary'] = 'aufgabestatus';
+  $handler->display->display_options['pane_title'] = 'vp Aufgaben';
+  $handler->display->display_options['pane_category']['name'] = 'Panel-Ansichten';
+  $handler->display->display_options['argument_input'] = array(
+    'field_verantwortlich_target_id' => array(
+      'type' => 'user',
+      'context' => 'entity:user.field_steckbrief',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'verantwortlich',
+    ),
+  );
+
+  /* Display: Panel aufgabe Log */
+  $handler = $view->new_display('panel_pane', 'Panel aufgabe Log', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_verantwortlich' => 'field_verantwortlich',
+    'field_kunde' => 'field_kunde',
+    'field_datum' => 'field_datum',
+    'field_aufgabe_status' => 'field_aufgabe_status',
+    'field_aufgabe' => 'field_aufgabe',
+    'field_bemerkung' => 'field_bemerkung',
+    'field_ansprechpartner' => 'field_ansprechpartner',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_verantwortlich' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_kunde' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_datum' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_aufgabe_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_aufgabe' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_bemerkung' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_ansprechpartner' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['empty'] = TRUE;
+  $handler->display->display_options['header']['php']['php_output'] = '';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '- keine Einträge gefunden -';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Feld: Inhalt: verantwortlich */
+  $handler->display->display_options['fields']['field_verantwortlich']['id'] = 'field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['table'] = 'field_data_field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['field'] = 'field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['settings'] = array(
+    'link' => 0,
+  );
+  /* Feld: Inhalt: Kunde */
+  $handler->display->display_options['fields']['field_kunde']['id'] = 'field_kunde';
+  $handler->display->display_options['fields']['field_kunde']['table'] = 'field_data_field_kunde';
+  $handler->display->display_options['fields']['field_kunde']['field'] = 'field_kunde';
+  $handler->display->display_options['fields']['field_kunde']['settings'] = array(
+    'link' => 1,
+  );
+  /* Feld: Inhalt: Datum */
+  $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';
+  $handler->display->display_options['fields']['field_datum']['field'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['label'] = 'Termin/Erledigt';
+  $handler->display->display_options['fields']['field_datum']['settings'] = array(
+    'format_type' => 'tagmini',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Inhalt: Status */
+  $handler->display->display_options['fields']['field_aufgabe_status']['id'] = 'field_aufgabe_status';
+  $handler->display->display_options['fields']['field_aufgabe_status']['table'] = 'field_data_field_aufgabe_status';
+  $handler->display->display_options['fields']['field_aufgabe_status']['field'] = 'field_aufgabe_status';
+  /* Feld: Inhalt: Aufgabe */
+  $handler->display->display_options['fields']['field_aufgabe']['id'] = 'field_aufgabe';
+  $handler->display->display_options['fields']['field_aufgabe']['table'] = 'field_data_field_aufgabe';
+  $handler->display->display_options['fields']['field_aufgabe']['field'] = 'field_aufgabe';
+  /* Feld: Inhalt: Bemerkung */
+  $handler->display->display_options['fields']['field_bemerkung']['id'] = 'field_bemerkung';
+  $handler->display->display_options['fields']['field_bemerkung']['table'] = 'field_data_field_bemerkung';
+  $handler->display->display_options['fields']['field_bemerkung']['field'] = 'field_bemerkung';
+  /* Feld: Inhalt: Ansprechpartner */
+  $handler->display->display_options['fields']['field_ansprechpartner']['id'] = 'field_ansprechpartner';
+  $handler->display->display_options['fields']['field_ansprechpartner']['table'] = 'field_data_field_ansprechpartner';
+  $handler->display->display_options['fields']['field_ansprechpartner']['field'] = 'field_ansprechpartner';
+  $handler->display->display_options['fields']['field_ansprechpartner']['settings'] = array(
+    'link' => 1,
+  );
+  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sortierkriterien: Inhalt: Beitragsdatum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontextfilter: Inhalt: verantwortlich (field_verantwortlich) */
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['id'] = 'field_verantwortlich_target_id';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['table'] = 'field_data_field_verantwortlich';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['field'] = 'field_verantwortlich_target_id';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_verantwortlich_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'aufgabe' => 'aufgabe',
+  );
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Typ';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  /* Filterkriterium: Inhalt: Status (field_aufgabe_status) */
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['id'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['table'] = 'field_data_field_aufgabe_status';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['field'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['value'] = array(
+    38 => '38',
+  );
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['vocabulary'] = 'aufgabestatus';
+  $handler->display->display_options['pane_title'] = 'vp Aufgaben';
+  $handler->display->display_options['pane_category']['name'] = 'Panel-Ansichten';
+  $handler->display->display_options['argument_input'] = array(
+    'field_verantwortlich_target_id' => array(
+      'type' => 'user',
+      'context' => 'entity:user.field_steckbrief',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'verantwortlich',
+    ),
+  );
   $translatables['aufgaben'] = array(
     t('Master'),
     t('<h4>Aufgaben</h4>'),
@@ -458,6 +886,12 @@ function cph_views_views_default_views() {
     t('Aufgabe Firma'),
     t('Beitrags-ID'),
     t('Aufgabe Firma Log'),
+    t('Panel aufgabe'),
+    t('- keine Einträge gefunden -'),
+    t('‚Bearbeiten‘-Link'),
+    t('vp Aufgaben'),
+    t('Panel-Ansichten'),
+    t('Panel aufgabe Log'),
   );
   $export['aufgaben'] = $view;
 

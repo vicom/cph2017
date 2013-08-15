@@ -273,10 +273,25 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'steckbrief';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'edit' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'neue_aufgabe' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'steckbrief_name_komplett' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'ds_user_picture' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'ds_picture_medium',
     ),
   );
   $export['node|steckbrief|full'] = $ds_fieldsetting;
@@ -414,10 +429,39 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'ds_user_picture' => array(
-      'weight' => '0',
+    'name' => array(
+      'weight' => '2',
       'label' => 'hidden',
-      'format' => 'ds_picture_thumbnail',
+      'format' => 'default',
+    ),
+    'ds_user_picture' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'ds_picture_medium',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'span4',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_steckbrief' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'span8',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
   );
   $export['user|user|full'] = $ds_fieldsetting;
@@ -1148,20 +1192,40 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'steckbrief_name_komplett',
-        1 => 'field_department',
-        2 => 'field_funktion',
-        3 => 'field_verbundene_firma',
+        1 => 'ds_user_picture',
+        2 => 'field_department',
+        3 => 'field_funktion',
+        4 => 'field_verbundene_firma',
+        5 => 'neue_aufgabe',
+        7 => 'edit',
+        8 => 'field_tel_mobil',
+        9 => 'field_telefax',
+        10 => 'field_telefon',
+        11 => 'field_e_mail',
+        12 => 'field_anrede',
+        13 => 'field_geburtstag',
+        14 => 'field_hauptap',
       ),
       'ds_hidden' => array(
-        4 => 'field_surename',
+        6 => 'field_surename',
       ),
     ),
     'fields' => array(
       'steckbrief_name_komplett' => 'ds_content',
+      'ds_user_picture' => 'ds_content',
       'field_department' => 'ds_content',
       'field_funktion' => 'ds_content',
       'field_verbundene_firma' => 'ds_content',
+      'neue_aufgabe' => 'ds_content',
       'field_surename' => 'ds_hidden',
+      'edit' => 'ds_content',
+      'field_tel_mobil' => 'ds_content',
+      'field_telefax' => 'ds_content',
+      'field_telefon' => 'ds_content',
+      'field_e_mail' => 'ds_content',
+      'field_anrede' => 'ds_content',
+      'field_geburtstag' => 'ds_content',
+      'field_hauptap' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -1211,7 +1275,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        'span4' => 'span4',
+        '' => '',
       ),
     ),
     'wrappers' => array(
@@ -1226,6 +1290,203 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['node|steckbrief|set1'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|steckbrief|set2';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'steckbrief';
+  $ds_layout->view_mode = 'set2';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'ds_user_picture',
+        1 => 'field_department',
+        2 => 'field_telefon',
+        3 => 'field_e_mail',
+        4 => 'field_tel_mobil',
+        5 => 'field_privat_telefon',
+        6 => 'field_telefax',
+      ),
+    ),
+    'fields' => array(
+      'ds_user_picture' => 'ds_content',
+      'field_department' => 'ds_content',
+      'field_telefon' => 'ds_content',
+      'field_e_mail' => 'ds_content',
+      'field_tel_mobil' => 'ds_content',
+      'field_privat_telefon' => 'ds_content',
+      'field_telefax' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 0,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|steckbrief|set2'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|steckbrief|set3';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'steckbrief';
+  $ds_layout->view_mode = 'set3';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_hobbies',
+        1 => 'field_praesent',
+        2 => 'field_bemerkung',
+        3 => 'field_geburtstag',
+      ),
+    ),
+    'fields' => array(
+      'field_hobbies' => 'ds_content',
+      'field_praesent' => 'ds_content',
+      'field_bemerkung' => 'ds_content',
+      'field_geburtstag' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|steckbrief|set3'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|aufgabenart|default';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'aufgabenart';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'description',
+        1 => 'field_aufgabenart_auswahl',
+      ),
+    ),
+    'fields' => array(
+      'description' => 'ds_content',
+      'field_aufgabenart_auswahl' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_sidebars' => 0,
+  );
+  $export['taxonomy_term|aufgabenart|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|aufgabestatus|default';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'aufgabestatus';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'description',
+        1 => 'more_link',
+        2 => 'title',
+      ),
+    ),
+    'fields' => array(
+      'description' => 'ds_content',
+      'more_link' => 'ds_content',
+      'title' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+      'ds_content' => array(
+        'span12' => 'span12',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_sidebars' => 0,
+  );
+  $export['taxonomy_term|aufgabestatus|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|aufgabestatus|full';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'aufgabestatus';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'description',
+        2 => 'more_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'description' => 'ds_content',
+      'more_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['taxonomy_term|aufgabestatus|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1299,40 +1560,37 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->entity_type = 'user';
   $ds_layout->bundle = 'user';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'panels-twocol';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
-        0 => 'ds_user_picture',
-        1 => 'field_titel',
-        2 => 'field_sex',
-        3 => 'field_firstname',
-        4 => 'field_surename',
-      ),
-      'right' => array(
-        5 => 'summary',
-        6 => 'profile_main',
+      'ds_content' => array(
+        0 => 'field_steckbrief',
+        1 => 'ds_user_picture',
+        2 => 'name',
+        3 => 'summary',
       ),
     ),
     'fields' => array(
-      'ds_user_picture' => 'left',
-      'field_titel' => 'left',
-      'field_sex' => 'left',
-      'field_firstname' => 'left',
-      'field_surename' => 'left',
-      'summary' => 'right',
-      'profile_main' => 'right',
+      'field_steckbrief' => 'ds_content',
+      'ds_user_picture' => 'ds_content',
+      'name' => 'ds_content',
+      'summary' => 'ds_content',
     ),
-    'classes' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 0,
     'hide_page_title' => '0',
     'page_option_title' => '',
+    'hide_sidebars' => 0,
   );
   $export['user|user|full'] = $ds_layout;
 

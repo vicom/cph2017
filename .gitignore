@@ -8,3 +8,5 @@ sites/default/settings.php
 .buildpath
 MAMP_php_error_log_MAMP
 nbproject
+bigdump-cph Kopie.php
+*.mysql.gz

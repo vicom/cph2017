@@ -1,0 +1,18 @@
+name = SevenPlus
+description = Admin-Theme Seven with additional Sidebars (left+right), tableless.
+base theme = "seven"
+core = "7.x"
+engine = phptemplate
+
+version = 7.1
+stylesheets[all][] = sevenplus.css
+stylesheets[all][] = other.css
+
+settings[shortcut_module_link] = 1
+
+regions[content] = Content
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[sidebar_first] = Sidebar left
+regions[sidebar_second] = Sidebar right

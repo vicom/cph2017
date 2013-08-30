@@ -580,7 +580,7 @@ function cph_panels_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_onecol';
+  $display->layout = 'onecol';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -609,7 +609,10 @@ function cph_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'img-circle',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -676,7 +679,7 @@ function cph_panels_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-15'] = $pane;
     $display->panels['middle'][2] = 'new-15';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-13';
   $handler->conf['display'] = $display;
   $export['user_view_panel_context'] = $handler;

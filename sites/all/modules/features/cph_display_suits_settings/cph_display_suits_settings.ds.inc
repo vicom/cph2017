@@ -303,6 +303,11 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'steckbrief';
   $ds_fieldsetting->view_mode = 'set1';
   $ds_fieldsetting->settings = array(
+    'steckbrief_name_komplett' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'edit' => array(
       'weight' => '7',
       'label' => 'hidden',
@@ -324,11 +329,6 @@ function cph_display_suits_settings_ds_field_settings_info() {
         'load_terms' => 0,
         'ft' => array(),
       ),
-    ),
-    'steckbrief_name_komplett' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
     ),
     'field_telefon' => array(
       'formatter_settings' => array(
@@ -433,9 +433,15 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'p',
+        'class' => '',
+        'ft' => array(),
+      ),
     ),
     'ds_user_picture' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'ds_picture_medium',
       'formatter_settings' => array(
@@ -543,7 +549,7 @@ function cph_display_suits_settings_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '[node:field-surename], [node:field-firstname] [node:title]',
+      'value' => '[node:field-surename], [node:field-firstname]',
       'format' => 'ds_code',
     ),
     'use_token' => 1,
@@ -1059,7 +1065,8 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       ),
       'hidden' => array(
         6 => 'path',
-        7 => '_add_existing_field',
+        7 => 'field_verantwortlich',
+        8 => '_add_existing_field',
       ),
     ),
     'fields' => array(
@@ -1070,6 +1077,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_verbundene_firma' => 'right',
       'field_dokument' => 'right',
       'path' => 'hidden',
+      'field_verantwortlich' => 'hidden',
       '_add_existing_field' => 'hidden',
     ),
     'classes' => array(
@@ -1255,8 +1263,8 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'steckbrief_name_komplett',
-        1 => 'field_department',
+        0 => 'field_department',
+        1 => 'steckbrief_name_komplett',
         2 => 'field_funktion',
         3 => 'field_telefon',
         4 => 'field_e_mail',
@@ -1265,8 +1273,8 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'steckbrief_name_komplett' => 'ds_content',
       'field_department' => 'ds_content',
+      'steckbrief_name_komplett' => 'ds_content',
       'field_funktion' => 'ds_content',
       'field_telefon' => 'ds_content',
       'field_e_mail' => 'ds_content',
@@ -1275,7 +1283,10 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'span4' => 'span4',
+      ),
+      'ds_content' => array(
+        'well well-small' => 'well well-small',
       ),
     ),
     'wrappers' => array(
@@ -1564,17 +1575,15 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_steckbrief',
-        1 => 'ds_user_picture',
+        0 => 'ds_user_picture',
+        1 => 'field_steckbrief',
         2 => 'name',
-        3 => 'summary',
       ),
     ),
     'fields' => array(
-      'field_steckbrief' => 'ds_content',
       'ds_user_picture' => 'ds_content',
+      'field_steckbrief' => 'ds_content',
       'name' => 'ds_content',
-      'summary' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(

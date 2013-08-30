@@ -1,0 +1,174 @@
+body.html {
+  position: inherit;
+}
+
+table td,table th {
+  vertical-align: top;
+}
+
+.two-rows-50percent table td {
+  width: 50%;
+}
+
+.nobreak {
+  white-space: nowrap;
+}
+
+.grayed {
+  color: #777;
+}
+
+.grayed a {
+  color: #50a7dd;
+}
+
+.span div {
+  display: inline;
+  margin-right: 1em;
+}
+
+/***********************
+ * Autocomplete-Views
+ ***********************/
+#autocomplete li {
+  background-color: #fff;
+  color: #888;
+}
+
+#autocomplete li:nth-child(even) {
+  background-color: #eee;
+}
+
+#autocomplete li:hover {
+  background-color: #eef9ff;
+  color: #888;
+}
+
+.reference-autocomplete .field-content {
+  color: #000;
+}
+
+li:hover .reference-autocomplete  .field-content {
+  color: #0074BD;
+}
+
+.reference-autocomplete .views-field {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/***********************
+ * Views-Counter
+ ***********************/
+.view-count {
+  text-align: right;
+}
+
+.view-count-inner {
+  border: 1px solid #BEBFB9;
+  border-bottom: none;
+  display: inline-block;
+  background-color: #F3F4EE;
+  padding: 0 5px;
+  font-style: italic;
+}
+
+.view-count-inner .view-count-nr {
+  font-weight: bold;
+}
+
+/**************************************
+ * better integration of Compact-Forms
+ * (Label inside Textfield per js)
+ **************************************/
+.form-item {
+  margin: 5px 0 10px 0;
+  padding: 0;
+}
+
+div .form-item .form-item {
+  padding: 0;
+  margin: 5px 0;
+}
+
+div.password-confirm {
+  margin-top: 0;
+}
+
+.compact-form-wrapper label {
+  color: #880;
+}
+
+input.form-text:focus,input.form-file:focus,textarea.form-textarea:focus,select.form-select:focus {
+  background-color: #ffd;
+}
+
+.password-strength {
+  margin-top: 0;
+}
+
+/*****************************************************************************
+ * grouping of forms (not ready)
+ *
+ * This will make a left and a right region in a fieldgroup
+ * How to do:
+ *  field-group (type div) with class "group-wrapper"
+ *     inside a field (type div) with class "group-left"
+ *       some fields
+ *       .....
+ *     another field (type div) with class "group-right"
+ *       some fields    
+ *****************************************************************************/
+.group-wrapper {
+  
+}
+
+.group-left,.group-right {
+  float: left;
+}
+
+.group-left {
+  margin-right: 20px;
+}
+.field-group-div fieldset.form-wrapper {
+  margin-top:0;
+}
+/**************************************
+ * Compact and nice output "in one row"
+ * -> for input-fields
+ * -> for output (nodeview)
+ **************************************/
+.inline-form .form-type-textfield label,.inline-form .form-type-select label,.inline-form .field-label,
+.inline-form .form-type-checkboxes> label, .inline-form .field-type-datetime label
+  {
+  display: inline-block;
+  width: 10em;
+}
+.inline-form .field-type-datetime input {
+  width: 10em;
+}
+
+.inline-form .field-type-datetime .fieldset-wrapper,.inline-form .field-type-datetime .date-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.inline-form .field-type-datetime .fieldset-wrapper .form-item {
+  margin-bottom: 0;
+}
+
+.inline-form .form-type-textfield input {
+  
+}
+
+.inline-form .form-type-checkboxes>label {
+  vertical-align: top;
+}
+
+.inline-form .form-type-checkboxes .form-checkboxes {
+  display: inline-block;
+}
+
+.inline-form .form-checkboxes>.form-item {
+  display: inline;
+}

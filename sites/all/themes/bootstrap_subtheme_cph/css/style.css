@@ -34,7 +34,8 @@ body .container-fluid {
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  #admin-menu {
+  #admin-menu,
+  .breadcrumb {
     display: none;
   }
   h1 {
@@ -47,7 +48,8 @@ body .container-fluid {
 }
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  #admin-menu {
+  #admin-menu,
+  .breadcrumb {
     display: none;
   }
   h1 {

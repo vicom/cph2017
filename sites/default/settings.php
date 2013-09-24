@@ -238,7 +238,7 @@ $databases = array (
     ),
   ),
 );
-    break;
+
 
 }
 

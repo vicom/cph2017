@@ -166,20 +166,43 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'page';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'author' => array(
-      'weight' => '6',
-      'label' => 'inline',
-      'format' => 'author',
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'author_linked',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'span4',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
     'post_date' => array(
-      'weight' => '5',
-      'label' => 'inline',
+      'weight' => '4',
+      'label' => 'hidden',
       'format' => 'ds_post_date_short',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
+    'field_inhalt' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'i',
+          'fis-cl' => 'icon icon-chevron-left',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
     ),
     'field_bild' => array(
       'formatter_settings' => array(
@@ -210,35 +233,20 @@ function cph_display_suits_settings_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '6',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link text' => 'Read more',
-        'wrapper' => '',
-        'class' => '',
+        'wrapper' => 'div',
+        'class' => 'span2',
         'ft' => array(
-          'classes' => 'grid-3',
-        ),
-      ),
-    ),
-    'author' => array(
-      'weight' => '4',
-      'label' => 'inline',
-      'format' => 'author',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'grid-3',
-        ),
-      ),
-    ),
-    'post_date' => array(
-      'weight' => '3',
-      'label' => 'inline',
-      'format' => 'ds_post_date_short',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'grid-3',
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'i',
+          'fis-cl' => 'icon icon-chevron-right',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
         ),
       ),
     ),
@@ -410,7 +418,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -855,21 +863,24 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_profil_adresse',
-        1 => 'title',
-        2 => 'field_telefon',
-        3 => 'field_telefax',
-        4 => 'field_e_mail',
-        5 => 'field_internet',
-        6 => 'field_postfach',
-        7 => 'field_adr_herkunft',
-        8 => 'field_titel',
-        9 => 'field_beschreibung',
-        10 => 'field_kd_nr_alt',
-        11 => 'field_branche',
+        0 => 'field_verteilerliste',
+        1 => 'field_profil_adresse',
+        2 => 'title',
+        3 => 'field_telefon',
+        4 => 'field_telefax',
+        5 => 'field_e_mail',
+        6 => 'field_internet',
+        7 => 'field_postfach',
+        8 => 'field_adr_herkunft',
+        9 => 'field_titel',
+        10 => 'field_beschreibung',
+        11 => 'field_kd_nr_alt',
+        12 => 'field_branche',
+        13 => 'field_stichwort',
       ),
     ),
     'fields' => array(
+      'field_verteilerliste' => 'ds_content',
       'field_profil_adresse' => 'ds_content',
       'title' => 'ds_content',
       'field_telefon' => 'ds_content',
@@ -882,6 +893,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_beschreibung' => 'ds_content',
       'field_kd_nr_alt' => 'ds_content',
       'field_branche' => 'ds_content',
+      'field_stichwort' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -997,31 +1009,27 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'page';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
+      'ds_content' => array(
         0 => 'field_inhalt',
-        1 => 'title',
-        2 => 'field_bild',
-        3 => 'body',
-      ),
-      'right' => array(
+        1 => 'field_bild',
+        2 => 'body',
+        3 => 'field_dokument',
         4 => 'post_date',
         5 => 'author',
         6 => 'field_verbundene_firma',
-        7 => 'field_dokument',
       ),
     ),
     'fields' => array(
-      'field_inhalt' => 'left',
-      'title' => 'left',
-      'field_bild' => 'left',
-      'body' => 'left',
-      'post_date' => 'right',
-      'author' => 'right',
-      'field_verbundene_firma' => 'right',
-      'field_dokument' => 'right',
+      'field_inhalt' => 'ds_content',
+      'field_bild' => 'ds_content',
+      'body' => 'ds_content',
+      'field_dokument' => 'ds_content',
+      'post_date' => 'ds_content',
+      'author' => 'ds_content',
+      'field_verbundene_firma' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -1029,8 +1037,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       ),
     ),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
@@ -1111,18 +1118,14 @@ function cph_display_suits_settings_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_bild',
         2 => 'body',
-        3 => 'post_date',
-        4 => 'author',
-        5 => 'field_dokument',
-        6 => 'node_link',
+        3 => 'field_dokument',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'middle',
       'field_bild' => 'middle',
       'body' => 'middle',
-      'post_date' => 'middle',
-      'author' => 'middle',
       'field_dokument' => 'middle',
       'node_link' => 'middle',
     ),
@@ -1507,26 +1510,31 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'classes' => array(),
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'description',
+      ),
+      'ds_hidden' => array(
+        1 => 'title',
+      ),
+    ),
+    'fields' => array(
+      'description' => 'ds_content',
+      'title' => 'ds_hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 0,
     'hide_sidebars' => 0,
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'title',
-        1 => 'description',
-      ),
-    ),
-    'fields' => array(
-      'title' => 'ds_content',
-      'description' => 'ds_content',
-    ),
   );
   $export['taxonomy_term|inhalte|default'] = $ds_layout;
 

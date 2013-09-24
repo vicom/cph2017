@@ -47,11 +47,25 @@ body.admin-menu {padding-top: 40px}
 		max-width: 2000px
 }
 
+	
+/* Large desktop */
+@media (min-width: 1200px) { 
 	//adjust the layot to better fit the first container-fluid
-	.main-container.container-fluid {
-		padding-left: 0px;
-		padding-right: 0px;
+	.main-container .container-fluid {
+  		padding-left: 0px;
+  		padding-right: 0px;
+	}
+
+ }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.main-container .container-fluid {
+  		padding-left: 0px;
+  		padding-right: 0px;
+	}
 }
+ 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { 
 
@@ -59,6 +73,7 @@ body.admin-menu {padding-top: 40px}
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+
 
  }
  

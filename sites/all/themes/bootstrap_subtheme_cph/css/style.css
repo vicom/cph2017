@@ -18,9 +18,19 @@ body.admin-menu {
 body .container-fluid {
   max-width: 2000px;
 }
-.main-container.container-fluid {
-  padding-left: 0px;
-  padding-right: 0px;
+/* Large desktop */
+@media (min-width: 1200px) {
+  .main-container .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  .main-container .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {

@@ -35,7 +35,7 @@ body .container-fluid {
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   #admin-menu {
-    display: hide;
+    display: none;
   }
   h1 {
     font-size: 26px;
@@ -48,7 +48,7 @@ body .container-fluid {
 /* Landscape phones and down */
 @media (max-width: 480px) {
   #admin-menu {
-    display: hide;
+    display: none;
   }
   h1 {
     font-size: 22px;

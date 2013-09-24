@@ -22,6 +22,20 @@ body .container-fluid {
   padding-left: 0px;
   padding-right: 0px;
 }
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .main-container.container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .main-container.container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 #block-system-main-menu .active-trail a {
   color: #ffffff;
 }

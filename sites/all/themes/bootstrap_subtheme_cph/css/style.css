@@ -32,6 +32,12 @@ body .container-fluid {
   }
 }
 @media (max-width: 767px) {
+  .navbar-fixed-top,
+  .navbar-fixed-bottom,
+  .navbar-static-top {
+    margin-left: 0;
+    margin-right: 0;
+  }
   html body.admin-menu {
     margin-top: 0px!important;
   }
@@ -52,6 +58,12 @@ body .container-fluid {
   }
 }
 @media (max-width: 480px) {
+  .navbar-fixed-top,
+  .navbar-fixed-bottom,
+  .navbar-static-top {
+    margin-left: 0;
+    margin-right: 0;
+  }
   html body.admin-menu {
     margin-top: 0px!important;
   }

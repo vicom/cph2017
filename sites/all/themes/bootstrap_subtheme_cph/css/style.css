@@ -44,7 +44,8 @@ body .container-fluid {
   h1 {
     font-size: 26px;
   }
-  .main-container.container-fluid {
+  .main-container.container-fluid,
+  .head {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -61,7 +62,8 @@ body .container-fluid {
   h1 {
     font-size: 22px;
   }
-  .main-container.container-fluid {
+  .main-container.container-fluid,
+  .head {
     padding-left: 10px;
     padding-right: 10px;
   }

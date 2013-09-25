@@ -25,15 +25,16 @@ body .container-fluid {
     padding-right: 0px;
   }
 }
-/* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
   .main-container .container-fluid {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
-/* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+  html body.admin-menu {
+    margin-top: 0px!important;
+  }
   #admin-menu,
   .breadcrumb {
     display: none;
@@ -50,8 +51,10 @@ body .container-fluid {
     padding-right: 10px;
   }
 }
-/* Landscape phones and down */
 @media (max-width: 480px) {
+  html body.admin-menu {
+    margin-top: 0px!important;
+  }
   #admin-menu,
   .breadcrumb {
     display: none;

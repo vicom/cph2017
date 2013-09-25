@@ -58,7 +58,7 @@ body.admin-menu {padding-top: 40px}
 
  }
  
-/* Portrait tablet to landscape and desktop */
+// Portrait tablet to landscape and desktop 
 @media (min-width: 768px) and (max-width: 979px) {
 	.main-container .container-fluid {
   		padding-left: 0px;
@@ -66,14 +66,18 @@ body.admin-menu {padding-top: 40px}
 	}
 }
  
-/* Landscape phone to portrait tablet */
+// Landscape phone to portrait tablet 
 @media (max-width: 767px) { 
 
+	html body.admin-menu {
+	margin-top: 0px!important;
+	}
 
 
 	#admin-menu, .breadcrumb {
 	display: none
 	}
+	
 	body.admin-menu {padding-top: 0px
 	}
 
@@ -88,8 +92,12 @@ body.admin-menu {padding-top: 40px}
 
  }
  
-/* Landscape phones and down */
+// Landscape phones and down 
 @media (max-width: 480px) { 
+
+	html body.admin-menu {
+	margin-top: 0px!important;
+	}
 
 	#admin-menu, .breadcrumb {
 	display: none 

@@ -11,6 +11,273 @@ function cph_views_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'aufgabe';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Aufgabe';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Aufgabe';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_aufgabe' => 'field_aufgabe',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_aufgabe' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Feld: Inhalt: Aufgabe */
+  $handler->display->display_options['fields']['field_aufgabe']['id'] = 'field_aufgabe';
+  $handler->display->display_options['fields']['field_aufgabe']['table'] = 'field_data_field_aufgabe';
+  $handler->display->display_options['fields']['field_aufgabe']['field'] = 'field_aufgabe';
+  /* Feld: Inhalt: verantwortlich */
+  $handler->display->display_options['fields']['field_verantwortlich']['id'] = 'field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['table'] = 'field_data_field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['field'] = 'field_verantwortlich';
+  $handler->display->display_options['fields']['field_verantwortlich']['settings'] = array(
+    'link' => 0,
+  );
+  /* Feld: Inhalt: Status */
+  $handler->display->display_options['fields']['field_aufgabe_status']['id'] = 'field_aufgabe_status';
+  $handler->display->display_options['fields']['field_aufgabe_status']['table'] = 'field_data_field_aufgabe_status';
+  $handler->display->display_options['fields']['field_aufgabe_status']['field'] = 'field_aufgabe_status';
+  /* Feld: Inhalt: Datum */
+  $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';
+  $handler->display->display_options['fields']['field_datum']['field'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['settings'] = array(
+    'format_type' => 'tagmini',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Inhalt: Datum beendet */
+  $handler->display->display_options['fields']['field_datum_beendet']['id'] = 'field_datum_beendet';
+  $handler->display->display_options['fields']['field_datum_beendet']['table'] = 'field_data_field_datum_beendet';
+  $handler->display->display_options['fields']['field_datum_beendet']['field'] = 'field_datum_beendet';
+  $handler->display->display_options['fields']['field_datum_beendet']['settings'] = array(
+    'format_type' => 'tagmini',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Sortierkriterien: Inhalt: Beitragsdatum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'aufgabe' => 'aufgabe',
+  );
+  /* Filterkriterium: Inhalt: Aufgabe (field_aufgabe) */
+  $handler->display->display_options['filters']['field_aufgabe_tid']['id'] = 'field_aufgabe_tid';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['table'] = 'field_data_field_aufgabe';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['field'] = 'field_aufgabe_tid';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['value'] = array(
+    963 => '963',
+  );
+  $handler->display->display_options['filters']['field_aufgabe_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_aufgabe_tid']['expose']['operator_id'] = 'field_aufgabe_tid_op';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['expose']['label'] = 'Aufgabe (field_aufgabe)';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['expose']['operator'] = 'field_aufgabe_tid_op';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['expose']['identifier'] = 'field_aufgabe_tid';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_aufgabe_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['vocabulary'] = 'aufgabenart';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'aufgabe';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Test - Aufgaben nach Aufgabenart';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-cph-funktionen';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Alle Aufgaben */
+  $handler = $view->new_display('page', 'Alle Aufgaben', 'page_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'aufgabe' => 'aufgabe',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterium: Inhalt: Status (field_aufgabe_status) */
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['id'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['table'] = 'field_data_field_aufgabe_status';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['field'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['value'] = array(
+    332 => '332',
+    333 => '333',
+    330 => '330',
+    331 => '331',
+  );
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['operator_id'] = 'field_aufgabe_status_tid_op';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['label'] = 'Status (field_aufgabe_status)';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['operator'] = 'field_aufgabe_status_tid_op';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['identifier'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['vocabulary'] = 'aufgabestatus';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'aufgaben-alle';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Test - Alle aufgaben';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-cph-funktionen';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Seite 2 */
+  $handler = $view->new_display('page', 'Seite 2', 'page_2');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'aufgabe' => 'aufgabe',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterium: Inhalt: Status (field_aufgabe_status) */
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['id'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['table'] = 'field_data_field_aufgabe_status';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['field'] = 'field_aufgabe_status_tid';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['value'] = array(
+    331 => '331',
+  );
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['vocabulary'] = 'aufgabestatus';
+  $handler->display->display_options['path'] = 'wiedervorlage';
+  $translatables['aufgabe'] = array(
+    t('Master'),
+    t('Aufgabe'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('nächste Seite ›'),
+    t('letzte Seite »'),
+    t('verantwortlich'),
+    t('Status'),
+    t('Datum'),
+    t('Datum beendet'),
+    t('Aufgabe (field_aufgabe)'),
+    t('Page'),
+    t('Alle Aufgaben'),
+    t('Status (field_aufgabe_status)'),
+    t('Seite 2'),
+  );
+  $export['aufgabe'] = $view;
+
+  $view = new view();
   $view->name = 'aufgaben';
   $view->description = '';
   $view->tag = 'default';
@@ -321,7 +588,8 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    38 => '38',
+    332 => '332',
+    331 => '331',
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'aufgabestatus';
@@ -434,7 +702,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'not';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    38 => '38',
+    331 => '331',
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'aufgabestatus';
@@ -621,10 +889,11 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['field_aufgabe_status_tid']['field'] = 'field_aufgabe_status_tid';
   $handler->display->display_options['filters']['field_aufgabe_status_tid']['operator'] = 'and';
   $handler->display->display_options['filters']['field_aufgabe_status_tid']['value'] = array(
-    38 => '38',
+    331 => '331',
   );
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['operator_id'] = 'field_aufgabe_status_tid_op';
-  $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['label'] = 'Status (field_aufgabe_status)';
+  $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['label'] = 'Status';
   $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['operator'] = 'field_aufgabe_status_tid_op';
   $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['identifier'] = 'field_aufgabe_status_tid';
   $handler->display->display_options['filters']['field_aufgabe_status_tid']['expose']['remember_roles'] = array(
@@ -707,7 +976,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['field_verantwortlich']['settings'] = array(
     'link' => 0,
   );
-  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  /* Feld: Inhalt: a��Bearbeitena��-Link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -826,7 +1095,7 @@ function cph_views_views_default_views() {
     t('vp Aufgaben'),
     t('Panel-Ansichten'),
     t('Seite'),
-    t('‚Bearbeiten‘-Link'),
+    t('a��Bearbeitena��-Link'),
     t('Beitragsdatum'),
     t('Seite 2'),
     t('Kunde (field_kunde)'),
@@ -929,7 +1198,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3000';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
   /* Feld: Inhalt: Titel */
@@ -938,6 +1207,129 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Feld: Stapelverarbeitungen: Inhalt */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::pathauto_node_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_assign_owner_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::node_unpublish_by_keyword_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_unsticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_promote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_sticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_save_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_publish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpromote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
   /* Sortierkriterien: Inhalt: Titel */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -947,9 +1339,24 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Veröffentlicht';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
   /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -958,9 +1365,26 @@ function cph_views_views_default_views() {
     'firma' => 'firma',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Typ';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['path'] = 'content/company';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Unternehmen';
@@ -977,9 +1401,105 @@ function cph_views_views_default_views() {
     t('Aufsteigend'),
     t('Absteigend'),
     t('Titel'),
+    t('Inhalt'),
+    t('Veröffentlicht'),
+    t('Typ'),
     t('Page'),
   );
   $export['firmen'] = $view;
+
+  $view = new view();
+  $view->name = 'liste_der_aufgabenart';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Liste der Aufgabenart';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Liste der Aufgabenart';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sortierkriterien: Inhalt: Beitragsdatum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'aufgabe' => 'aufgabe',
+  );
+  /* Filterkriterium: Inhalt: Aufgabe (field_aufgabe) */
+  $handler->display->display_options['filters']['field_aufgabe_tid']['id'] = 'field_aufgabe_tid';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['table'] = 'field_data_field_aufgabe';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['field'] = 'field_aufgabe_tid';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['value'] = array(
+    974 => '974',
+  );
+  $handler->display->display_options['filters']['field_aufgabe_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_aufgabe_tid']['vocabulary'] = 'aufgabenart';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'liste-der-aufgabenart';
+  $translatables['liste_der_aufgabenart'] = array(
+    t('Master'),
+    t('Liste der Aufgabenart'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('nächste Seite ›'),
+    t('letzte Seite »'),
+    t('Page'),
+  );
+  $export['liste_der_aufgabenart'] = $view;
 
   $view = new view();
   $view->name = 'personen';
@@ -1169,7 +1689,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['score']['table'] = 'search_index';
   $handler->display->display_options['fields']['score']['field'] = 'score';
   $handler->display->display_options['fields']['score']['precision'] = '0';
-  /* Feld: Inhalt: Firma */
+  /* Feld: Inhalt: Verbundene Firma */
   $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';
@@ -1230,7 +1750,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'set1';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhalt: Firma (field_verbundene_firma) */
+  /* Kontextfilter: Inhalt: Verbundene Firma (field_verbundene_firma) */
   $handler->display->display_options['arguments']['field_verbundene_firma_target_id']['id'] = 'field_verbundene_firma_target_id';
   $handler->display->display_options['arguments']['field_verbundene_firma_target_id']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['arguments']['field_verbundene_firma_target_id']['field'] = 'field_verbundene_firma_target_id';
@@ -1280,7 +1800,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['score']['field'] = 'score';
   $handler->display->display_options['fields']['score']['exclude'] = TRUE;
   $handler->display->display_options['fields']['score']['precision'] = '0';
-  /* Feld: Inhalt: Firma */
+  /* Feld: Inhalt: Verbundene Firma */
   $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';
@@ -1368,11 +1888,9 @@ function cph_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Taxonomy Articals';
-  $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -1382,61 +1900,12 @@ function cph_views_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'ds';
-  $handler->display->display_options['row_options']['load_comments'] = 0;
-  $handler->display->display_options['row_options']['grouping'] = 0;
-  $handler->display->display_options['row_options']['advanced'] = 0;
-  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
-  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
-  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
-  /* Feld: Inhalt: Titel */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sortierkriterien: Draggableviews: Gewichtung */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'taxonomy_articals:page_1';
-  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
-  /* Kontextfilter: Inhalt: Inhalt (field_inhalt) */
-  $handler->display->display_options['arguments']['field_inhalt_tid']['id'] = 'field_inhalt_tid';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['table'] = 'field_data_field_inhalt';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['field'] = 'field_inhalt_tid';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_inhalt_tid']['summary_options']['items_per_page'] = '25';
-  /* Filterkriterium: Inhalt: Veröffentlicht */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'page' => 'page',
-  );
+  $handler->display->display_options['row_plugin'] = 'fields';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1484,7 +1953,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '300',
   );
-  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  /* Feld: Inhalt: a��Bearbeitena��-Link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -1595,7 +2064,138 @@ function cph_views_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Panel-Ansichten';
   $translatables['taxonomy_articals'] = array(
     t('Master'),
-    t('Taxonomy Articals'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ previous'),
+    t('next ›'),
+    t('letzte Seite »'),
+    t('Page'),
+    t('Tax'),
+    t('Tabelle'),
+    t('Textkörper'),
+    t('Bearbeiten'),
+    t('Sortieren'),
+    t('Inhalt'),
+    t('Seite'),
+    t('Panel sort'),
+    t('Panel-Ansichten'),
+  );
+  $export['taxonomy_articals'] = $view;
+
+  $view = new view();
+  $view->name = 'taxonomy_lists';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'taxonomy Lists';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Feld: Taxonomie-Begriff: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'firma_verteiler' => 'firma_verteiler',
+  );
+
+  /* Display: Seite */
+  $handler = $view->new_display('page', 'Seite', 'page_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Taxonomie-Begriff: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontextfilter: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  $handler->display->display_options['arguments']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['arguments']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['arguments']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['arguments']['machine_name']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['machine_name']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['machine_name']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['machine_name']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['machine_name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['machine_name']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['machine_name']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Taxonomie-Begriff: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['path'] = 'taxonomy/%';
+  $translatables['taxonomy_lists'] = array(
+    t('Master'),
     t('mehr'),
     t('Anwenden'),
     t('Zurücksetzen'),
@@ -1609,19 +2209,11 @@ function cph_views_views_default_views() {
     t('‹ vorherige Seite'),
     t('nächste Seite ›'),
     t('letzte Seite »'),
-    t('Alle'),
-    t('Page'),
-    t('Tax'),
-    t('Tabelle'),
-    t('Textkörper'),
-    t('Bearbeiten'),
-    t('Sortieren'),
-    t('Inhalt'),
     t('Seite'),
-    t('Panel sort'),
-    t('Panel-Ansichten'),
+    t('Alle'),
+    t('Name'),
   );
-  $export['taxonomy_articals'] = $view;
+  $export['taxonomy_lists'] = $view;
 
   $view = new view();
   $view->name = 'userlist';

@@ -1,0 +1,69 @@
+<?php
+/*************************************************************************************************
+ * Formatter
+ */
+
+/**
+ * Implementation of hook_field_formatter_info().
+ *
+ * for 'field types' look in table field_config
+ */
+function vicom_cph_extra_field_formatter_info() {
+
+  return array(
+    'text_as_link'   => array(
+      'label'       => 'Text as Link',
+      'description' => 'no description',
+      'field types' => array('text'),
+    ),
+    'term_as_tid'    => array(
+      'label'       => 'Term as Term-ID',
+      'description' => 'no description',
+      'field types' => array('taxonomy_term_reference'),
+    ),
+    'bool_as_symbol' => array(
+      'label'       => 'Symbols',
+      'description' => 'marked and cross-symbols',
+      'field types' => array('list_boolean'),
+    ),
+
+  );
+}
+
+/**
+ * Implementation of hook_field_formatter_view().
+ *
+ */
+function vicom_cph_extra_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  // Initialize the var.
+  $element = NULL;
+  $output = '';
+  switch ($display['type']) {
+    // Text as Link
+    case 'text_as_link':
+      if (isset($items[0]['safe_value'])) {
+        $link = $org = $items[0]['safe_value'];
+        if (strpos($org, 'http') !== 0) {
+          $link = 'http://' . $org;
+        }
+        $output = "<a target='_blank' href='$link'>$org</a>";
+      }
+      else return;
+
+      break;
+
+    // 0,1,2 as Date-State for 'before', 'while', 'after' Period
+    case 'term_as_tid':
+      $output = ($items) ? (string) $items[0]['tid'] : '';
+      break;
+
+    case 'bool_as_symbol':
+      // 0 as "v"-Symbol   1 as "x"-Symbol
+      $output = ($items[0]['value']) ? '<span class="yesno yesno-yes">✔</span>' : '<span class="yesno yesno-no">✖</span>';
+      break;
+
+
+  }
+  $element[0]['#markup'] = $output;
+  return $element;
+}

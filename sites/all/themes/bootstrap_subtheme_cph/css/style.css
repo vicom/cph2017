@@ -107,3 +107,23 @@ h4 {
 .navbar .nav li a.active-trail {
   color: #000000;
 }
+body {
+  line-height: 21px;
+}
+.well-sub {
+  position: relative;
+  margin: 15px 0;
+  padding: 39px 19px 14px;
+  *padding-top: 19px;
+  background-color: transparent;
+  border: none;
+}
+DIV.ds-1col.node.node-aufgabe.contextual-links-region.view-mode-set1.clearfix {
+  position: relative;
+  margin: 15px 0;
+  padding: 12px;
+  *padding-top: 19px;
+  background-color: transparent;
+  border-bottom: 1px solid;
+  border-color: #e3e3e3;
+}

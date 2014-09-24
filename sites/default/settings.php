@@ -211,7 +211,7 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'cph3',
+      'database' => 'cph',
       'username' => 'root',
       'password' => 'root',
       'host' => 'localhost',
@@ -222,25 +222,7 @@ $databases = array (
   ),
 );
     break;
-    
 case 'cph.vicom-agency.de':
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'db271743_28',
-      'username' => 'db271743_28',
-      'password' => '31kHY96EL3',
-      'host' => 'mysql5.just-in-place.com',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
-    break;
-case 'cph2.vicom-agency.de':
 $databases = array (
   'default' => 
   array (

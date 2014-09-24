@@ -18,7 +18,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'set1';
   $ds_fieldsetting->settings = array(
     'ds_ansprechpartner' => array(
-      'weight' => '10',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -34,7 +34,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       ),
     ),
     'ds_aufgabe_statusbar' => array(
-      'weight' => '11',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -50,7 +50,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '9',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -62,19 +62,6 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'span12',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_aufgabe_status' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'span4',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -276,14 +263,20 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'set1';
   $ds_fieldsetting->settings = array(
     'firma_internet' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'title' => array(
-      'weight' => '6',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => '',
+        'class' => '',
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|firma|set1'] = $ds_fieldsetting;
@@ -410,13 +403,74 @@ function cph_display_suits_settings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|schaufenster|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'schaufenster';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'author' => array(
+      'weight' => '5',
+      'label' => 'inline',
+      'format' => 'author',
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'span4 bob',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|schaufenster|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|schaufenster|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'schaufenster';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => '',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+    'links' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|schaufenster|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|steckbrief|set1';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'steckbrief';
   $ds_fieldsetting->view_mode = 'set1';
   $ds_fieldsetting->settings = array(
     'neu' => array(
-      'weight' => '6',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -425,14 +479,14 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'strong',
         'class' => '',
         'ft' => array(),
       ),
     ),
     'node_link' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -634,13 +688,12 @@ function cph_display_suits_settings_ds_layout_settings_info() {
         4 => 'field_ansprechpartner_alt2',
         5 => 'field_datum',
         6 => 'field_ansprechpartner',
-        7 => 'field_aufgabe_status',
-        8 => 'field_datum_beendet',
-        9 => 'node_link',
+        7 => 'field_datum_beendet',
+        8 => 'node_link',
       ),
       'ds_hidden' => array(
-        10 => 'ds_ansprechpartner',
-        11 => 'ds_aufgabe_statusbar',
+        9 => 'ds_ansprechpartner',
+        10 => 'ds_aufgabe_statusbar',
       ),
     ),
     'fields' => array(
@@ -651,7 +704,6 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_ansprechpartner_alt2' => 'ds_content',
       'field_datum' => 'ds_content',
       'field_ansprechpartner' => 'ds_content',
-      'field_aufgabe_status' => 'ds_content',
       'field_datum_beendet' => 'ds_content',
       'node_link' => 'ds_content',
       'ds_ansprechpartner' => 'ds_hidden',
@@ -863,25 +915,23 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_profil_adresse',
-        1 => 'field_telefon',
-        2 => 'field_telefax',
-        3 => 'field_e_mail',
-        4 => 'field_internet',
-        5 => 'firma_internet',
-      ),
-      'ds_hidden' => array(
-        6 => 'title',
+        0 => 'title',
+        1 => 'field_profil_adresse',
+        2 => 'field_telefon',
+        3 => 'field_telefax',
+        4 => 'field_e_mail',
+        5 => 'field_internet',
+        6 => 'firma_internet',
       ),
     ),
     'fields' => array(
+      'title' => 'ds_content',
       'field_profil_adresse' => 'ds_content',
       'field_telefon' => 'ds_content',
       'field_telefax' => 'ds_content',
       'field_e_mail' => 'ds_content',
       'field_internet' => 'ds_content',
       'firma_internet' => 'ds_content',
-      'title' => 'ds_hidden',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -985,8 +1035,6 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 0,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
   );
   $export['node|kalender|form'] = $ds_layout;
 
@@ -1080,6 +1128,94 @@ function cph_display_suits_settings_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|schaufenster|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'schaufenster';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_image',
+        1 => 'body',
+        2 => 'field_dokumente',
+        3 => 'field_anbieter',
+        4 => 'field_anbieter_kontakt_extra',
+        5 => 'author',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'ds_content',
+      'body' => 'ds_content',
+      'field_dokumente' => 'ds_content',
+      'field_anbieter' => 'ds_content',
+      'field_anbieter_kontakt_extra' => 'ds_content',
+      'author' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|schaufenster|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|schaufenster|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'schaufenster';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'body',
+      ),
+      'ds_hidden' => array(
+        2 => 'links',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+      'links' => 'ds_hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|schaufenster|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|steckbrief|form';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'steckbrief';
@@ -1108,11 +1244,11 @@ function cph_display_suits_settings_ds_layout_settings_info() {
         17 => 'field_hobbies',
         18 => 'field_praesent',
         19 => 'field_bemerkung',
-        20 => 'field_verteiler',
       ),
       'right' => array(
-        21 => 'field_sprachen_tax',
-        22 => 'field_adresse_privat',
+        20 => 'field_sprachen_tax',
+        21 => 'field_adresse_privat',
+        22 => 'field_verteilerliste',
       ),
       'hidden' => array(
         23 => 'field_sprachen',
@@ -1140,9 +1276,9 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_hobbies' => 'left',
       'field_praesent' => 'left',
       'field_bemerkung' => 'left',
-      'field_verteiler' => 'left',
       'field_sprachen_tax' => 'right',
       'field_adresse_privat' => 'right',
+      'field_verteilerliste' => 'right',
       'field_sprachen' => 'hidden',
       '_add_existing_field' => 'hidden',
     ),
@@ -1179,8 +1315,10 @@ function cph_display_suits_settings_ds_layout_settings_info() {
         2 => 'field_hauptap',
         3 => 'field_telefon',
         4 => 'field_e_mail',
-        5 => 'node_link',
-        6 => 'neu',
+        5 => 'neu',
+      ),
+      'ds_hidden' => array(
+        6 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -1189,8 +1327,8 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_hauptap' => 'ds_content',
       'field_telefon' => 'ds_content',
       'field_e_mail' => 'ds_content',
-      'node_link' => 'ds_content',
       'neu' => 'ds_content',
+      'node_link' => 'ds_hidden',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -1233,6 +1371,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
         3 => 'field_tel_mobil',
         4 => 'field_privat_telefon',
         5 => 'field_telefax',
+        6 => 'field_sprachen_tax',
       ),
     ),
     'fields' => array(
@@ -1242,14 +1381,25 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_tel_mobil' => 'ds_content',
       'field_privat_telefon' => 'ds_content',
       'field_telefax' => 'ds_content',
+      'field_sprachen_tax' => 'ds_content',
     ),
-    'classes' => array(),
-    'wrappers' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
   );
   $export['node|steckbrief|set2'] = $ds_layout;
 
@@ -1263,7 +1413,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_verteiler',
+        0 => 'field_verteilerliste',
         1 => 'field_hobbies',
         2 => 'field_praesent',
         3 => 'field_bemerkung',
@@ -1271,7 +1421,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'field_verteiler' => 'ds_content',
+      'field_verteilerliste' => 'ds_content',
       'field_hobbies' => 'ds_content',
       'field_praesent' => 'ds_content',
       'field_bemerkung' => 'ds_content',

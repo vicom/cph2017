@@ -11,6 +11,114 @@ function cph_views_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'alte_kd_nr';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'alte Kd nr';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Kdnr';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Feld: Inhalt: Kd_nr_alt */
+  $handler->display->display_options['fields']['field_kd_nr_alt']['id'] = 'field_kd_nr_alt';
+  $handler->display->display_options['fields']['field_kd_nr_alt']['table'] = 'field_data_field_kd_nr_alt';
+  $handler->display->display_options['fields']['field_kd_nr_alt']['field'] = 'field_kd_nr_alt';
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Kd_nr_alt (field_kd_nr_alt) */
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['id'] = 'field_kd_nr_alt_value';
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['table'] = 'field_data_field_kd_nr_alt';
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['field'] = 'field_kd_nr_alt_value';
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['expose']['operator_id'] = 'field_kd_nr_alt_value_op';
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['expose']['label'] = 'Kd_nr_alt (field_kd_nr_alt)';
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['expose']['operator'] = 'field_kd_nr_alt_value_op';
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['expose']['identifier'] = 'field_kd_nr_alt_value';
+  $handler->display->display_options['filters']['field_kd_nr_alt_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'aufgabe' => 'aufgabe',
+    'page' => 'page',
+    'kalender' => 'kalender',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'kdnr';
+  $translatables['alte_kd_nr'] = array(
+    t('Master'),
+    t('Kdnr'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('nächste Seite ›'),
+    t('letzte Seite »'),
+    t('Kd_nr_alt'),
+    t('Kd_nr_alt (field_kd_nr_alt)'),
+    t('Page'),
+  );
+  $export['alte_kd_nr'] = $view;
+
+  $view = new view();
   $view->name = 'aufgabe';
   $view->description = '';
   $view->tag = 'default';
@@ -1511,6 +1619,10 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Sortierkriterien: Taxonomie-Begriff: Gewichtung */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Kontextfilter: Taxonomie-Begriff: Firmen (field_firmen) */
   $handler->display->display_options['arguments']['field_firmen_value']['id'] = 'field_firmen_value';
   $handler->display->display_options['arguments']['field_firmen_value']['table'] = 'field_data_field_firmen';
@@ -1911,6 +2023,94 @@ function cph_views_views_default_views() {
   $export['firmen'] = $view;
 
   $view = new view();
+  $view->name = 'kalender';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Kalender';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Kalender';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'calendar_style';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sortierkriterien: Inhalt: Beitragsdatum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'kalender' => 'kalender',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'kalender';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Kalender';
+  $handler->display->display_options['menu']['name'] = 'menu-cph-funktionen';
+  $translatables['kalender'] = array(
+    t('Master'),
+    t('Kalender'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('nächste Seite ›'),
+    t('letzte Seite »'),
+    t('Page'),
+  );
+  $export['kalender'] = $view;
+
+  $view = new view();
   $view->name = 'kalender_2';
   $view->description = '';
   $view->tag = 'Calendar';
@@ -2260,7 +2460,13 @@ function cph_views_views_default_views() {
   $handler->display->display_options['title'] = 'Liste nach Bundesland';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    8 => '8',
+    7 => '7',
+    6 => '6',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -2505,17 +2711,31 @@ function cph_views_views_default_views() {
     'Berlin' => 'Berlin',
     'Brandenburg' => 'Brandenburg',
     'Bremen' => 'Bremen',
+    'California' => 'California',
+    'CO 80027' => 'CO 80027',
+    'Colorado' => 'Colorado',
+    'Florida' => 'Florida',
+    'Georgia' => 'Georgia',
     'Hamburg' => 'Hamburg',
+    'Hampshire' => 'Hampshire',
+    'Hertfordshire' => 'Hertfordshire',
     'Hessen' => 'Hessen',
+    'Illinois' => 'Illinois',
+    'Kalifornien' => 'Kalifornien',
+    'Kent' => 'Kent',
     'Mecklenburg-Vorpommern' => 'Mecklenburg-Vorpommern',
+    'New South Wales' => 'New South Wales',
     'Niedersachsen' => 'Niedersachsen',
     'Nordrhein-Westphalen' => 'Nordrhein-Westphalen',
+    'Ontario' => 'Ontario',
     'Rheinland-Pfalz' => 'Rheinland-Pfalz',
     'Saarland' => 'Saarland',
     'Sachsen' => 'Sachsen',
     'Sachsen-Anhalt' => 'Sachsen-Anhalt',
     'Schleswig-Holstein' => 'Schleswig-Holstein',
+    'Scotland' => 'Scotland',
     'Thüringen' => 'Thüringen',
+    'Virginia' => 'Virginia',
   );
   $handler->display->display_options['filters']['field_bundesland_value']['group'] = 1;
   $handler->display->display_options['filters']['field_bundesland_value']['exposed'] = TRUE;
@@ -2775,6 +2995,195 @@ function cph_views_views_default_views() {
     t('Block'),
   );
   $export['personen'] = $view;
+
+  $view = new view();
+  $view->name = 'sprachen';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'sprachen';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'sprachen';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_sprachen',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+    1 => array(
+      'field' => 'field_sprachen_tax',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+    'title' => 'title',
+    'field_sprachen' => 'field_sprachen',
+    'edit_node' => 'edit_node',
+    'field_sprachen_tax' => 'field_sprachen_tax',
+  );
+  $handler->display->display_options['style_options']['default'] = 'title';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_sprachen' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_sprachen_tax' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Feld: Inhaltsversion: Beitrags-ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node_revision';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = '​node/[nid]/​edit';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Feld: Inhalt: Sprachen */
+  $handler->display->display_options['fields']['field_sprachen']['id'] = 'field_sprachen';
+  $handler->display->display_options['fields']['field_sprachen']['table'] = 'field_data_field_sprachen';
+  $handler->display->display_options['fields']['field_sprachen']['field'] = 'field_sprachen';
+  $handler->display->display_options['fields']['field_sprachen']['delta_offset'] = '0';
+  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  /* Feld: Inhalt: Sprachen Tax */
+  $handler->display->display_options['fields']['field_sprachen_tax']['id'] = 'field_sprachen_tax';
+  $handler->display->display_options['fields']['field_sprachen_tax']['table'] = 'field_data_field_sprachen_tax';
+  $handler->display->display_options['fields']['field_sprachen_tax']['field'] = 'field_sprachen_tax';
+  $handler->display->display_options['fields']['field_sprachen_tax']['delta_offset'] = '0';
+  /* Sortierkriterien: Inhalt: Sprachen Tax (field_sprachen_tax) */
+  $handler->display->display_options['sorts']['field_sprachen_tax_tid']['id'] = 'field_sprachen_tax_tid';
+  $handler->display->display_options['sorts']['field_sprachen_tax_tid']['table'] = 'field_data_field_sprachen_tax';
+  $handler->display->display_options['sorts']['field_sprachen_tax_tid']['field'] = 'field_sprachen_tax_tid';
+  /* Sortierkriterien: Inhalt: Titel */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'steckbrief' => 'steckbrief',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterium: Inhalt: Sprachen (field_sprachen) */
+  $handler->display->display_options['filters']['field_sprachen_value_1']['id'] = 'field_sprachen_value_1';
+  $handler->display->display_options['filters']['field_sprachen_value_1']['table'] = 'field_data_field_sprachen';
+  $handler->display->display_options['filters']['field_sprachen_value_1']['field'] = 'field_sprachen_value';
+  $handler->display->display_options['filters']['field_sprachen_value_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_sprachen_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_sprachen_value_1']['reduce_duplicates'] = TRUE;
+  /* Filterkriterium: Inhalt: Sprachen (field_sprachen) */
+  $handler->display->display_options['filters']['field_sprachen_value']['id'] = 'field_sprachen_value';
+  $handler->display->display_options['filters']['field_sprachen_value']['table'] = 'field_data_field_sprachen';
+  $handler->display->display_options['filters']['field_sprachen_value']['field'] = 'field_sprachen_value';
+  $handler->display->display_options['filters']['field_sprachen_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_sprachen_value']['value'] = array(
+    'deutsch' => 'deutsch',
+  );
+  $handler->display->display_options['filters']['field_sprachen_value']['reduce_duplicates'] = TRUE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'sprachen';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Tools - Sprachen';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-cph-funktionen';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['sprachen'] = array(
+    t('Master'),
+    t('sprachen'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('nächste Seite ›'),
+    t('letzte Seite »'),
+    t('Beitrags-ID'),
+    t('Sprachen'),
+    t('Sprachen Tax'),
+    t('Page'),
+  );
+  $export['sprachen'] = $view;
 
   $view = new view();
   $view->name = 'steckbrief';
@@ -3343,13 +3752,40 @@ function cph_views_views_default_views() {
   /* Display: Seite */
   $handler = $view->new_display('page', 'Seite', 'page_1');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name' => 'name',
+    'field_personen_editable' => 'field_personen_editable',
+    'field_firmen_editable' => 'field_firmen_editable',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_personen_editable' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_firmen_editable' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = FALSE;
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Taxonomie-Begriff: Name */
@@ -3360,6 +3796,20 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Feld: Taxonomie-Begriff: Personen (editable) */
+  $handler->display->display_options['fields']['field_personen_editable']['id'] = 'field_personen_editable';
+  $handler->display->display_options['fields']['field_personen_editable']['table'] = 'field_data_field_personen';
+  $handler->display->display_options['fields']['field_personen_editable']['field'] = 'field_personen_editable';
+  $handler->display->display_options['fields']['field_personen_editable']['label'] = 'Steckbrief';
+  $handler->display->display_options['fields']['field_personen_editable']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_personen_editable']['widget_type'] = '0';
+  $handler->display->display_options['fields']['field_personen_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_personen_editable']['suppress_description'] = 1;
+  /* Feld: Taxonomie-Begriff: ‚Bearbeiten‘-Link für Begriffe */
+  $handler->display->display_options['fields']['edit_term']['id'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['edit_term']['field'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['label'] = 'Bearbeiten';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Taxonomie-Vokabular: Maschinenlesbarer Name */
   $handler->display->display_options['arguments']['machine_name']['id'] = 'machine_name';
@@ -3394,7 +3844,103 @@ function cph_views_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  $handler->display->display_options['path'] = 'taxonomy/%';
+  $handler->display->display_options['path'] = 'taxonomy/pax/%';
+
+  /* Display: Seite Feld Firma */
+  $handler = $view->new_display('page', 'Seite Feld Firma', 'page_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name' => 'name',
+    'field_personen_editable' => 'field_personen_editable',
+    'field_firmen_editable' => 'field_firmen_editable',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_personen_editable' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_firmen_editable' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = FALSE;
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Taxonomie-Begriff: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Feld: Taxonomie-Begriff: Firmen (editable) */
+  $handler->display->display_options['fields']['field_firmen_editable']['id'] = 'field_firmen_editable';
+  $handler->display->display_options['fields']['field_firmen_editable']['table'] = 'field_data_field_firmen';
+  $handler->display->display_options['fields']['field_firmen_editable']['field'] = 'field_firmen_editable';
+  $handler->display->display_options['fields']['field_firmen_editable']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_firmen_editable']['widget_type'] = 'options_buttons';
+  $handler->display->display_options['fields']['field_firmen_editable']['suppress_label'] = 0;
+  $handler->display->display_options['fields']['field_firmen_editable']['suppress_description'] = 0;
+  /* Feld: Taxonomie-Begriff: ‚Bearbeiten‘-Link für Begriffe */
+  $handler->display->display_options['fields']['edit_term']['id'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['edit_term']['field'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['label'] = 'Bearbeiten';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontextfilter: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  $handler->display->display_options['arguments']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['arguments']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['arguments']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['arguments']['machine_name']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['machine_name']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['machine_name']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['machine_name']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['machine_name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['machine_name']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['machine_name']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Taxonomie-Begriff: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['path'] = 'taxonomy/comp/%';
   $translatables['taxonomy_lists'] = array(
     t('Master'),
     t('mehr'),
@@ -3411,8 +3957,12 @@ function cph_views_views_default_views() {
     t('nächste Seite ›'),
     t('letzte Seite »'),
     t('Seite'),
+    t('Steckbrief'),
+    t('Bearbeiten'),
     t('Alle'),
     t('Name'),
+    t('Seite Feld Firma'),
+    t('Firmen (editable)'),
   );
   $export['taxonomy_lists'] = $view;
 

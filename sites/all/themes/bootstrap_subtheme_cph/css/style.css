@@ -127,3 +127,118 @@ DIV.ds-1col.node.node-aufgabe.contextual-links-region.view-mode-set1.clearfix {
   border-bottom: 1px solid;
   border-color: #e3e3e3;
 }
+
+// Specials 
+
+.views-field-field-personen-editable .views-row-edit-static {display: none;}
+.views-field-field-personen-editable .views-row-edit-edit  {display: inline}
+
+body.type-hotellier .cph-head {
+background: url("http://cph-hotels.com/templates/cph_yaml_default/css/cph/img/header.png");
+height: 118px;
+margin-top: 10px;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+.bob img {
+	margin-bottom: 12px;
+	}
+
+body.type-hotellier .navbar-fixed-top {position: relative}
+
+body.type-hotellier #navbar {
+max-width: 1066px;
+margin-left: 10px;
+}
+body.type-hotellier .navbar-inner {
+background-color: ;
+}
+
+body.type-hotellier {
+	background-color: #eee;
+	padding-top: 0;
+	color: #003563;
+	}
+
+
+body.type-hotellier .container-fluid , body.type-hotellier .cph-head {
+max-width: 1046px;
+padding-right: 10px;
+padding-left: 10px;
+padding-top: 0px;
+}
+
+body.type-hotellier div.main-container  {
+	max-width: 1066px;
+	background-color: #ffffff;
+	}
+	
+body.type-hotellier	#navbar {
+}
+
+.type-hotellier a {
+color: #CD1239;
+}
+.type-hotellier a:hover, .type-hotellier a:focus {
+color: #CD1239;
+text-decoration: underline;
+}
+
+body.type-hotellier .well {
+background-color: transparent;
+border: none
+}
+body.type-hotellier .navbar-fixed-top .navbar-inner, body.type-hotellier .navbar-static-top .navbar-inner {
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+body.type-hotellier h1 {
+font-size: 1.4em;
+}
+
+body.type-hotellier .navbar-inner .container-fluid {
+background-color: #003563;
+}
+
+body.type-hotellier .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+background-color: #ffffff;
+color: #CD1239;
+}
+body.type-hotellier .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+color: #ffffff;
+text-decoration: none;
+background-color: #E5E5E5;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+body.type-hotellier .navbar .nav li a.active-trail {
+background-color: #ffffff;
+color: #CD1239;
+}
+
+body.type-hotellier .navbar .btn-navbar {
+display: none;
+float: right;
+padding: 7px 10px;
+margin-left: 5px;
+margin-right: 5px;
+color: white;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #EDEDED;
+background-image: -moz-linear-gradient(top, #F2F2F2, #E5E5E5);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F2F2F2), to(#E5E5E5));
+background-image: -webkit-linear-gradient(top, #F2F2F2, #E5E5E5);
+background-image: -o-linear-gradient(top, #F2F2F2, #E5E5E5);
+background-image: linear-gradient(to bottom, #F2F2F2, #E5E5E5);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF2F2f2', endColorstr='#FFE5E5e5', GradientType=0);
+border-color: #E5E5E5 #E5E5E5 #BFBFBF;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .075);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .075);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .075);
+}

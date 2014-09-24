@@ -1,3 +1,4 @@
+	<div class="cph-head"></div>
 <header id="navbar" role="banner" class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">

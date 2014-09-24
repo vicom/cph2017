@@ -283,7 +283,7 @@ function cph_panels_default_page_manager_handlers() {
     $pane->panel = 'middle';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'Jumplist',
@@ -311,7 +311,7 @@ function cph_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'visible-phone',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -799,7 +799,7 @@ function cph_panels_default_page_manager_handlers() {
       'view_mode' => 'full',
       'context' => 'argument_entity_id:user_1',
       'override_title' => 1,
-      'override_title_text' => 'Profil',
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -807,7 +807,7 @@ function cph_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'img-circle',
+      'css_class' => 'row',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -816,6 +816,34 @@ function cph_panels_default_page_manager_handlers() {
     $display->panels['middle'][0] = 'new-18';
     $pane = new stdClass();
     $pane->pid = 'new-19';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'aufgaben-vp_aufgaben';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:user_1',
+      ),
+      'arguments' => array(
+        'field_verantwortlich_target_id' => '%steckbrief:nid',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-19'] = $pane;
+    $display->panels['middle'][1] = 'new-19';
+    $pane = new stdClass();
+    $pane->pid = 'new-20';
     $pane->panel = 'middle';
     $pane->type = 'views';
     $pane->subtype = 'aufgaben';
@@ -844,32 +872,10 @@ function cph_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['middle'][1] = 'new-19';
-    $pane = new stdClass();
-    $pane->pid = 'new-20';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'aufgaben-vp_aufgaben';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:user_1',
-      ),
-      'arguments' => array(
-        'field_verantwortlich_target_id' => '%steckbrief:nid',
-      ),
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'row',
     );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();

@@ -1449,6 +1449,89 @@ function cph_display_suits_settings_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|aufgabenart|default';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'aufgabenart';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'description',
+        2 => 'field_firma_dropdown',
+        3 => 'more_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'description' => 'ds_content',
+      'field_firma_dropdown' => 'ds_content',
+      'more_link' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['taxonomy_term|aufgabenart|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|aufgabenart|form';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'aufgabenart';
+  $ds_layout->view_mode = 'form';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'name',
+        1 => 'field_firma_dropdown',
+        2 => 'description',
+        3 => 'path',
+      ),
+      'hidden' => array(
+        4 => '_add_existing_field',
+      ),
+    ),
+    'fields' => array(
+      'name' => 'ds_content',
+      'field_firma_dropdown' => 'ds_content',
+      'description' => 'ds_content',
+      'path' => 'ds_content',
+      '_add_existing_field' => 'hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['taxonomy_term|aufgabenart|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'taxonomy_term|inhalte|default';
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'inhalte';

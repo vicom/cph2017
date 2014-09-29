@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Node Type feature.
- */
-
-include_once 'node_type.features.inc';

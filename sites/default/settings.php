@@ -222,15 +222,15 @@ $databases = array (
   ),
 );
     break;
-case 'cph.vicom-agency.de':
+case 'cph2.vicom-agency.de':
 $databases = array (
   'default' => 
   array (
     'default' => 
     array (
-      'database' => 'db271743_24',
-      'username' => 'db271743_24',
-      'password' => 'RJLNueTpgg',
+      'database' => 'db271743_4',
+      'username' => 'db271743_4',
+      'password' => 'TB613F3mP7',
       'host' => 'mysql5.just-in-place.com',
       'port' => '',
       'driver' => 'mysql',

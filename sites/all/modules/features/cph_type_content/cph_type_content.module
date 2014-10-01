@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the CPH Type Content feature.
- */
-
-include_once 'cph_type_content.features.inc';

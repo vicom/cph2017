@@ -1,0 +1,9 @@
+name = CPH Menus
+core = 7.x
+package = CPH Features
+version = 7.x-1.0
+project = cph_menus
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:1
+features[menu_custom][] = menu-cph-funktionen

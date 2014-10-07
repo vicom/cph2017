@@ -26,7 +26,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span12',
+          'ow-cl' => 'col-md-12',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -41,8 +41,8 @@ function cph_display_suits_settings_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'span12',
+          'ow-el' => 'col-md-',
+          'ow-cl' => 'col-md-12',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -61,7 +61,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span12',
+          'ow-cl' => 'col-md-12',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -74,7 +74,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span3',
+          'ow-cl' => 'col-md-3',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -86,8 +86,8 @@ function cph_display_suits_settings_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'span4',
+          'ow-el' => 'col-md-',
+          'ow-cl' => 'col-md-4',
           'ow-def-cl' => TRUE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -100,7 +100,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'h4',
-          'ow-cl' => 'span7',
+          'ow-cl' => 'col-md-7',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -113,7 +113,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span5',
+          'ow-cl' => 'col-md-5',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -126,7 +126,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span6 offset1',
+          'ow-cl' => 'col-md-6 offset1',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -138,8 +138,8 @@ function cph_display_suits_settings_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'span6',
+          'ow-el' => 'col-md-',
+          'ow-cl' => 'col-md-6',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -151,8 +151,8 @@ function cph_display_suits_settings_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'span4',
+          'ow-el' => 'col-md-',
+          'ow-cl' => 'col-md-4',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -164,8 +164,8 @@ function cph_display_suits_settings_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'fis' => TRUE,
-          'fis-el' => 'span',
-          'fis-cl' => 'span-4',
+          'fis-el' => 'col-md-',
+          'fis-cl' => 'col-md--4',
           'fis-at' => '',
           'fis-def-at' => FALSE,
         ),
@@ -187,7 +187,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '0',
-        'wrapper' => 'h2 span4',
+        'wrapper' => 'h2 col-md-4',
         'class' => '',
         'ft' => array(),
       ),
@@ -214,7 +214,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span4',
+          'ow-cl' => 'col-md-4',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -232,7 +232,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span4',
+          'ow-cl' => 'col-md-4',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -245,7 +245,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span3 pull-left',
+          'ow-cl' => 'col-md-3 pull-left',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -254,6 +254,26 @@ function cph_display_suits_settings_ds_field_settings_info() {
     ),
   );
   $export['node|firma|list_standard'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|firma|main_infos';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'firma';
+  $ds_fieldsetting->view_mode = 'main_infos';
+  $ds_fieldsetting->settings = array(
+    'firma_internet' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|firma|main_infos'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -366,7 +386,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'formatter_settings' => array(
         'link text' => 'Read more',
         'wrapper' => 'div',
-        'class' => 'span2',
+        'class' => 'col-md-2',
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'fis' => TRUE,
@@ -426,7 +446,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'span4 bob',
+          'ow-cl' => 'col-md-4 bob',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -444,20 +464,40 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
         'wrapper' => '',
         'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
       ),
     ),
     'links' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|schaufenster|teaser'] = $ds_fieldsetting;
@@ -636,6 +676,7 @@ function cph_display_suits_settings_ds_custom_fields_info() {
   $ds_field->properties = array(
     'code' => array(
       'value' => '<a  href="#aufgabe">Aufgabe</a> | 
+
 <a  href="#ansprechpartner">Ansprechpartner</a> ',
       'format' => 'filtered_html',
     ),
@@ -654,7 +695,8 @@ function cph_display_suits_settings_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a class="btn btn-small" type="button" href="/node/add/aufgabe?field_ansprechpartner=[node:nid]&amp;field_verantwortlich=[current-user:field-steckbrief:nid]&amp;field_kunde=[node:field-verbundene-firma:nid]">Neue Aufgabe</a> 
+      'value' => '<a class="btn btn-sm btn-primary" type="button" href="/node/add/aufgabe?field_ansprechpartner=[node:nid]&amp;field_verantwortlich=[current-user:field-steckbrief:nid]&amp;field_kunde=[node:field-verbundene-firma:nid]">Neue Aufgabe</a> 
+
 ',
       'format' => 'ds_code',
     ),
@@ -854,8 +896,10 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'row',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 0,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
     'hide_page_title' => '1',
     'page_option_title' => '',
     'hide_sidebars' => 0,
@@ -904,6 +948,62 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['node|firma|list_standard'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|firma|main_infos';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'firma';
+  $ds_layout->view_mode = 'main_infos';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_profil_adresse',
+        2 => 'field_telefon',
+        3 => 'field_telefax',
+        4 => 'field_e_mail',
+        5 => 'field_internet',
+        6 => 'firma_internet',
+        7 => 'field_branche',
+        8 => 'field_verteilerliste',
+        9 => 'field_stichwort',
+        10 => 'field_beschreibung',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_profil_adresse' => 'ds_content',
+      'field_telefon' => 'ds_content',
+      'field_telefax' => 'ds_content',
+      'field_e_mail' => 'ds_content',
+      'field_internet' => 'ds_content',
+      'firma_internet' => 'ds_content',
+      'field_branche' => 'ds_content',
+      'field_verteilerliste' => 'ds_content',
+      'field_stichwort' => 'ds_content',
+      'field_beschreibung' => 'ds_content',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|firma|main_infos'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
@@ -1182,14 +1282,16 @@ function cph_display_suits_settings_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'body',
+        0 => 'field_image',
+        1 => 'title',
+        2 => 'body',
       ),
       'ds_hidden' => array(
-        2 => 'links',
+        3 => 'links',
       ),
     ),
     'fields' => array(
+      'field_image' => 'ds_content',
       'title' => 'ds_content',
       'body' => 'ds_content',
       'links' => 'ds_hidden',
@@ -1332,12 +1434,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        'container' => 'container',
-        'span4' => 'span4',
-      ),
-      'ds_content' => array(
-        'row' => 'row',
-        'span4' => 'span4',
+        '' => '',
       ),
     ),
     'wrappers' => array(
@@ -1585,6 +1682,15 @@ function cph_display_suits_settings_ds_view_modes_info() {
     'user' => 'user',
   );
   $export['list_standard'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'main_infos';
+  $ds_view_mode->label = 'Main Infos';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['main_infos'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

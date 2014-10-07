@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CPH Block Class feature.
+ */
+
+include_once 'cph_block_class.features.inc';

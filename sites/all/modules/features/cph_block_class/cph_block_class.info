@@ -1,0 +1,16 @@
+name = CPH Block Class
+core = 7.x
+package = CPH Features
+php = 5.2.4
+version = 7.x-1.1
+project = cph_block_class
+dependencies[] = block_class
+dependencies[] = features
+features[block_class][] = block:1
+features[block_class][] = masquerade:masquerade
+features[block_class][] = menu_block:1
+features[block_class][] = menu_block:2
+features[block_class][] = menu_block:3
+features[block_class][] = multiblock:1
+features[block_class][] = user:online
+features[features_api][] = api:1

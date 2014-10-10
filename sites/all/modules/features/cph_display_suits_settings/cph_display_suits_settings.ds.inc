@@ -18,7 +18,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'set1';
   $ds_fieldsetting->settings = array(
     'ds_ansprechpartner' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -34,7 +34,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       ),
     ),
     'ds_aufgabe_statusbar' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -50,7 +50,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -68,52 +68,13 @@ function cph_display_suits_settings_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_datum' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'col-md-3',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_verantwortlich' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'col-md-',
-          'ow-cl' => 'col-md-4',
-          'ow-def-cl' => TRUE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'field_aufgabe' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'h4',
-          'ow-cl' => 'col-md-7',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_ansprechpartner' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'col-md-5',
+          'ow-cl' => '',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -124,50 +85,6 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'col-md-6 offset1',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_ansprechpartner_alt' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'col-md-',
-          'ow-cl' => 'col-md-6',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_datum_beendet' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'col-md-',
-          'ow-cl' => 'col-md-4',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_ansprechpartner_alt2' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fis' => TRUE,
-          'fis-el' => 'col-md-',
-          'fis-cl' => 'col-md--4',
-          'fis-at' => '',
-          'fis-def-at' => FALSE,
         ),
       ),
     ),
@@ -724,28 +641,30 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_aufgabe',
-        1 => 'field_bemerkung',
-        2 => 'field_verantwortlich',
-        3 => 'field_ansprechpartner_alt',
-        4 => 'field_ansprechpartner_alt2',
-        5 => 'field_datum',
-        6 => 'field_ansprechpartner',
-        7 => 'field_datum_beendet',
-        8 => 'node_link',
+        1 => 'field_aufgabe_status',
+        2 => 'field_bemerkung',
+        3 => 'field_verantwortlich',
+        4 => 'field_ansprechpartner',
+        5 => 'field_ansprechpartner_alt',
+        6 => 'field_ansprechpartner_alt2',
+        7 => 'field_datum',
+        8 => 'field_datum_beendet',
+        9 => 'node_link',
       ),
       'ds_hidden' => array(
-        9 => 'ds_ansprechpartner',
-        10 => 'ds_aufgabe_statusbar',
+        10 => 'ds_ansprechpartner',
+        11 => 'ds_aufgabe_statusbar',
       ),
     ),
     'fields' => array(
       'field_aufgabe' => 'ds_content',
+      'field_aufgabe_status' => 'ds_content',
       'field_bemerkung' => 'ds_content',
       'field_verantwortlich' => 'ds_content',
+      'field_ansprechpartner' => 'ds_content',
       'field_ansprechpartner_alt' => 'ds_content',
       'field_ansprechpartner_alt2' => 'ds_content',
       'field_datum' => 'ds_content',
-      'field_ansprechpartner' => 'ds_content',
       'field_datum_beendet' => 'ds_content',
       'node_link' => 'ds_content',
       'ds_ansprechpartner' => 'ds_hidden',
@@ -753,10 +672,10 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'col-md-12' => 'col-md-12',
       ),
       'ds_content' => array(
-        'well-sub' => 'well-sub',
+        'well' => 'well',
       ),
     ),
     'wrappers' => array(
@@ -1434,7 +1353,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'col-md-4' => 'col-md-4',
       ),
     ),
     'wrappers' => array(

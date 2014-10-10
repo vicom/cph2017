@@ -165,7 +165,7 @@ function cph_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => 'kontakt',
-      'css_class' => '',
+      'css_class' => 'col-md-12',
     );
     $pane->extras = array();
     $pane->position = 0;

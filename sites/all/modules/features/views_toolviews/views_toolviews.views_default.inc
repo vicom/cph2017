@@ -55,7 +55,7 @@ function views_toolviews_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Feld: Inhalt: Firma */
+  /* Feld: Inhalt: Verbundene Firma */
   $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';
@@ -128,11 +128,10 @@ function views_toolviews_views_default_views() {
   $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
   $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
   $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
-  /* Feld: Inhalt: Firma */
+  /* Feld: Inhalt: Verbundene Firma */
   $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';
-  $handler->display->display_options['fields']['field_verbundene_firma']['label'] = 'Verbundene Firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['settings'] = array(
     'link' => 1,
   );
@@ -289,7 +288,7 @@ function views_toolviews_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = '([nid])';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Feld: Inhalt: Firma */
+  /* Feld: Inhalt: Verbundene Firma */
   $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';
@@ -323,6 +322,168 @@ function views_toolviews_views_default_views() {
   $handler->display->display_options['filters']['field_surename_value']['table'] = 'field_data_field_surename';
   $handler->display->display_options['filters']['field_surename_value']['field'] = 'field_surename_value';
   $handler->display->display_options['filters']['field_surename_value']['operator'] = 'not empty';
+
+  /* Display: CPH Karteninhaber */
+  $handler = $view->new_display('page', 'CPH Karteninhaber', 'page_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '200';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
+  $handler->display->display_options['relationships']['field_verbundene_firma_target_id']['id'] = 'field_verbundene_firma_target_id';
+  $handler->display->display_options['relationships']['field_verbundene_firma_target_id']['table'] = 'field_data_field_verbundene_firma';
+  $handler->display->display_options['relationships']['field_verbundene_firma_target_id']['field'] = 'field_verbundene_firma_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Feld: Inhalt: Vorname */
+  $handler->display->display_options['fields']['field_firstname']['id'] = 'field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['table'] = 'field_data_field_firstname';
+  $handler->display->display_options['fields']['field_firstname']['field'] = 'field_firstname';
+  /* Feld: Inhalt: Verbundene Firma */
+  $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
+  $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
+  $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';
+  $handler->display->display_options['fields']['field_verbundene_firma']['settings'] = array(
+    'link' => 1,
+  );
+  /* Feld: Inhalt: Alle Taxononmiebegriffe */
+  $handler->display->display_options['fields']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['fields']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['fields']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['fields']['term_node_tid']['relationship'] = 'field_verbundene_firma_target_id';
+  $handler->display->display_options['fields']['term_node_tid']['vocabularies'] = array(
+    'aufgabenart' => 0,
+    'aufgabestatus' => 0,
+    'branche' => 0,
+    'firma_stichwort' => 0,
+    'firma_verteiler' => 0,
+    'inhalte' => 0,
+    'tags' => 0,
+  );
+  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Bearbeiten';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'steckbrief' => 'steckbrief',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterium: Inhalt: Titel */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 2;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Bei neuen Adressen der Name (Beispiel:"Sabine Fuchs"", bei alten Adressen nur der Nachname (Beispiel:"Fuchs")';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'Nachname';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filterkriterium: Inhalt: Titel */
+  $handler->display->display_options['filters']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['filters']['title_1']['table'] = 'node';
+  $handler->display->display_options['filters']['title_1']['field'] = 'title';
+  $handler->display->display_options['filters']['title_1']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['title_1']['group'] = 1;
+  /* Filterkriterium: Inhalt: Vorname (field_firstname) */
+  $handler->display->display_options['filters']['field_firstname_value']['id'] = 'field_firstname_value';
+  $handler->display->display_options['filters']['field_firstname_value']['table'] = 'field_data_field_firstname';
+  $handler->display->display_options['filters']['field_firstname_value']['field'] = 'field_firstname_value';
+  $handler->display->display_options['filters']['field_firstname_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_firstname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['operator_id'] = 'field_firstname_value_op';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['label'] = 'Vorname (field_firstname)';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['operator'] = 'field_firstname_value_op';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['identifier'] = 'field_firstname_value';
+  $handler->display->display_options['filters']['field_firstname_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filterkriterium: Inhalt: Nachname (field_surename) */
+  $handler->display->display_options['filters']['field_surename_value']['id'] = 'field_surename_value';
+  $handler->display->display_options['filters']['field_surename_value']['table'] = 'field_data_field_surename';
+  $handler->display->display_options['filters']['field_surename_value']['field'] = 'field_surename_value';
+  $handler->display->display_options['filters']['field_surename_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_surename_value']['expose']['operator_id'] = 'field_surename_value_op';
+  $handler->display->display_options['filters']['field_surename_value']['expose']['label'] = 'Nachname (field_surename)';
+  $handler->display->display_options['filters']['field_surename_value']['expose']['description'] = 'nur optional';
+  $handler->display->display_options['filters']['field_surename_value']['expose']['operator'] = 'field_surename_value_op';
+  $handler->display->display_options['filters']['field_surename_value']['expose']['identifier'] = 'field_surename_value';
+  $handler->display->display_options['filters']['field_surename_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  /* Filterkriterium: Inhalt: Verteilerliste (field_verteilerliste) */
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['id'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['table'] = 'field_data_field_verteilerliste';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['field'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['value'] = array(
+    0 => '761',
+  );
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['vocabulary'] = 'firma_verteiler';
+  $handler->display->display_options['path'] = 'karteninhaber';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'CPH Karteninhaber';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-cph-funktionen';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['tool_steckbrief_ohne_firma'] = array(
     t('Master'),
     t('Liste - Personen '),
@@ -340,14 +501,13 @@ function views_toolviews_views_default_views() {
     t('nächste Seite ›'),
     t('letzte Seite »'),
     t('Titel'),
-    t('Firma'),
+    t('Verbundene Firma'),
     t('Alle Taxononmiebegriffe'),
     t('Page'),
     t('Seite'),
     t('Inhalt entity referenced from field_verbundene_firma'),
     t('Name'),
     t('Vorname'),
-    t('Verbundene Firma'),
     t('Bearbeiten'),
     t('Bei neuen Adressen der Name (Beispiel:"Sabine Fuchs"", bei alten Adressen nur der Nachname (Beispiel:"Fuchs")'),
     t('Vorname (field_firstname)'),
@@ -355,6 +515,7 @@ function views_toolviews_views_default_views() {
     t('nur optional'),
     t('Entity Reference'),
     t('([nid])'),
+    t('CPH Karteninhaber'),
   );
   $export['tool_steckbrief_ohne_firma'] = $view;
 

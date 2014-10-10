@@ -2016,6 +2016,7 @@ function cph_views_views_default_views() {
     t('Absteigend'),
     t('Titel'),
     t('Inhalt'),
+    t('- Wählen Sie eine Aufgabe -'),
     t('Veröffentlicht'),
     t('Typ'),
     t('Page'),
@@ -2205,6 +2206,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -2245,6 +2247,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'week';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
@@ -2283,6 +2286,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -2347,6 +2351,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'year';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
@@ -2385,6 +2390,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -2585,6 +2591,52 @@ function cph_views_views_default_views() {
   $handler->display->display_options['title'] = 'Liste - Unternehmen';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Verteilerliste (field_verteilerliste) */
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['id'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['table'] = 'field_data_field_verteilerliste';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['field'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['operator_id'] = 'field_verteilerliste_tid_op';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['label'] = 'Verteilerliste (field_verteilerliste)';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['operator'] = 'field_verteilerliste_tid_op';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['identifier'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['vocabulary'] = 'firma_verteiler';
+  /* Filterkriterium: Inhalt: Stichwort (field_stichwort) */
+  $handler->display->display_options['filters']['field_stichwort_tid']['id'] = 'field_stichwort_tid';
+  $handler->display->display_options['filters']['field_stichwort_tid']['table'] = 'field_data_field_stichwort';
+  $handler->display->display_options['filters']['field_stichwort_tid']['field'] = 'field_stichwort_tid';
+  $handler->display->display_options['filters']['field_stichwort_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_stichwort_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_stichwort_tid']['expose']['operator_id'] = 'field_stichwort_tid_op';
+  $handler->display->display_options['filters']['field_stichwort_tid']['expose']['label'] = 'Stichwort (field_stichwort)';
+  $handler->display->display_options['filters']['field_stichwort_tid']['expose']['operator'] = 'field_stichwort_tid_op';
+  $handler->display->display_options['filters']['field_stichwort_tid']['expose']['identifier'] = 'field_stichwort_tid';
+  $handler->display->display_options['filters']['field_stichwort_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_stichwort_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_stichwort_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_stichwort_tid']['vocabulary'] = 'firma_stichwort';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -2659,7 +2711,7 @@ function cph_views_views_default_views() {
     6 => 0,
   );
   $handler->display->display_options['filters']['field_branche_tid_1']['vocabulary'] = 'branche';
-  /* Filterkriterium: Inhalt: Adresse (field_profil_adresse:locality) */
+  /* Filterkriterium: Inhalt: Adresse - Ort (z.B. Stadt) */
   $handler->display->display_options['filters']['field_profil_adresse_locality']['id'] = 'field_profil_adresse_locality';
   $handler->display->display_options['filters']['field_profil_adresse_locality']['table'] = 'field_data_field_profil_adresse';
   $handler->display->display_options['filters']['field_profil_adresse_locality']['field'] = 'field_profil_adresse_locality';
@@ -2679,7 +2731,7 @@ function cph_views_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filterkriterium: Inhalt: Adresse (field_profil_adresse:postal_code) */
+  /* Filterkriterium: Inhalt: Adresse - Postleitzahl */
   $handler->display->display_options['filters']['field_profil_adresse_postal_code']['id'] = 'field_profil_adresse_postal_code';
   $handler->display->display_options['filters']['field_profil_adresse_postal_code']['table'] = 'field_data_field_profil_adresse';
   $handler->display->display_options['filters']['field_profil_adresse_postal_code']['field'] = 'field_profil_adresse_postal_code';
@@ -2756,7 +2808,7 @@ function cph_views_views_default_views() {
   );
   $handler->display->display_options['filters']['field_bundesland_value']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_bundesland_value']['reduce_duplicates'] = TRUE;
-  /* Filterkriterium: Inhalt: Adresse (field_profil_adresse:country) */
+  /* Filterkriterium: Inhalt: Adresse - Land */
   $handler->display->display_options['filters']['field_profil_adresse_country']['id'] = 'field_profil_adresse_country';
   $handler->display->display_options['filters']['field_profil_adresse_country']['table'] = 'field_data_field_profil_adresse';
   $handler->display->display_options['filters']['field_profil_adresse_country']['field'] = 'field_profil_adresse_country';
@@ -2804,6 +2856,8 @@ function cph_views_views_default_views() {
     t('Page'),
     t('Hotelsuche'),
     t('Liste - Unternehmen'),
+    t('Verteilerliste (field_verteilerliste)'),
+    t('Stichwort (field_stichwort)'),
     t('Name'),
     t('Enthält'),
     t('Branche'),
@@ -3285,7 +3339,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['score']['table'] = 'search_index';
   $handler->display->display_options['fields']['score']['field'] = 'score';
   $handler->display->display_options['fields']['score']['precision'] = '0';
-  /* Feld: Inhalt: Firma */
+  /* Feld: Inhalt: Verbundene Firma */
   $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';
@@ -3355,7 +3409,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['sorts']['field_surename_value']['table'] = 'field_data_field_surename';
   $handler->display->display_options['sorts']['field_surename_value']['field'] = 'field_surename_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhalt: Firma (field_verbundene_firma) */
+  /* Kontextfilter: Inhalt: Verbundene Firma (field_verbundene_firma) */
   $handler->display->display_options['arguments']['field_verbundene_firma_target_id']['id'] = 'field_verbundene_firma_target_id';
   $handler->display->display_options['arguments']['field_verbundene_firma_target_id']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['arguments']['field_verbundene_firma_target_id']['field'] = 'field_verbundene_firma_target_id';
@@ -3405,7 +3459,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['score']['field'] = 'score';
   $handler->display->display_options['fields']['score']['exclude'] = TRUE;
   $handler->display->display_options['fields']['score']['precision'] = '0';
-  /* Feld: Inhalt: Firma */
+  /* Feld: Inhalt: Verbundene Firma */
   $handler->display->display_options['fields']['field_verbundene_firma']['id'] = 'field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['table'] = 'field_data_field_verbundene_firma';
   $handler->display->display_options['fields']['field_verbundene_firma']['field'] = 'field_verbundene_firma';

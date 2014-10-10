@@ -42,7 +42,7 @@ function cph_block_class_block_class_features_default_class() {
     'user:online' => array(
       'module' => 'user',
       'delta' => 'online',
-      'css_classes' => 'hidden-xs hidden-sm',
+      'css_classes' => 'hidden-xs hidden-sm small',
     ),
   );
 }

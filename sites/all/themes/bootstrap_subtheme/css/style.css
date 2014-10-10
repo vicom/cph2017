@@ -1,4 +1,119 @@
-/**
- * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
- * remove this comment and start adding your styles to this file.
- */
+body {
+  color: #384047;
+}
+h1 {
+  font-size: 32px;
+}
+.block h2 {
+  font-size: 18px;
+}
+.field .field-label {
+  font-weight: 400;
+  color: #999999;
+}
+.form-control {
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+  background-color: #f9f9f9;
+  border: 1px solid #999999;
+  border-radius: 3px;
+}
+label {
+  font-size: 12px;
+  font-weight: normal;
+}
+.views-exposed-form label {
+  font-weight: normal;
+}
+.views-row {
+  padding-top: 10px;
+}
+.description {
+  font-size: 12px;
+  font-style: italic;
+}
+.menu-name-menu-cph-funktionen .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 1px 15px;
+}
+.views-field-field-personen-editable .views-row-edit-static {
+  display: none;
+}
+.views-field-field-personen-editable .views-row-edit-edit {
+  display: inline;
+}
+body.navbar-is-fixed-top {
+  padding-top: 6px !important;
+}
+body.type-hotellier {
+  background-color: #eee;
+  padding-top: 0;
+  color: #003563;
+  padding-top: 2px;
+  margin: 0 auto;
+}
+body.type-hotellier h1 {
+  font-size: 1.4em;
+}
+body.type-hotellier .core {
+  max-width: 1066px;
+  background-color: white;
+  margin: 0 auto;
+}
+body.type-hotellier .container {
+  width: 1066px;
+}
+body.type-hotellier .cph-head {
+  background: url("http://cph-hotels.com/templates/cph_yaml_default/css/cph/img/header.png");
+  height: 118px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+body.type-hotellier .bob img {
+  padding-bottom: 12px;
+}
+body.type-hotellier div.main-container {
+  background-color: #ffffff;
+}
+body.type-hotellier .well {
+  background-color: transparent;
+  border: none;
+}
+body.type-hotellier .navbar-fixed-top .navbar-inner,
+body.type-hotellier .navbar-static-top .navbar-inner {
+  box-shadow: none;
+}
+body.type-hotellier .navbar-fixed-top {
+  position: relative;
+}
+body.type-hotellier #navbar {
+  max-width: 1046px;
+  margin-left: 10px;
+}
+body.type-hotellier .navbar-inverse {
+  background-color: #003563;
+  border-color: #080808;
+}
+body.type-hotellier .navbar .nav li.dropdown.open > .dropdown-toggle,
+body.type-hotellier .navbar .nav li.dropdown.active > .dropdown-toggle,
+body.type-hotellier .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: #ffffff;
+  color: #CD1239;
+}
+body.type-hotellier .navbar .nav > .active > a,
+body.type-hotellier .navbar .nav > .active > a:hover,
+body.type-hotellier .navbar .nav > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #E5E5E5;
+  box-shadow: none;
+}
+body.type-hotellier .navbar .nav li a.active-trail {
+  background-color: #ffffff;
+  color: #CD1239;
+}

@@ -4,8 +4,17 @@ body {
 h1 {
   font-size: 32px;
 }
-.block h2 {
+.block h3 {
   font-size: 18px;
+}
+.views-table caption {
+  text-align: left;
+  font-size: 18px;
+}
+th {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 0.6em;
 }
 .field .field-label {
   font-weight: 400;
@@ -39,6 +48,12 @@ label {
   position: relative;
   display: block;
   padding: 1px 15px;
+}
+div.ds-1col.node.node-steckbrief {
+  padding-top: 10px;
+}
+div.field.field-name-neu {
+  padding-top: 10px;
 }
 .views-field-field-personen-editable .views-row-edit-static {
   display: none;

@@ -397,7 +397,7 @@ function cph_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '<h4>Aufgaben</h4>';
+  $handler->display->display_options['title'] = '<h3>Aufgaben</h3>';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
@@ -599,6 +599,8 @@ function cph_views_views_default_views() {
 
   /* Display: Block Aufgabe Steckbrief */
   $handler = $view->new_display('block', 'Block Aufgabe Steckbrief', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<h2>Aufgaben</h2>';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Inhalt: Beitrags-ID */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -614,6 +616,8 @@ function cph_views_views_default_views() {
 
   /* Display: Aufgabe Firma */
   $handler = $view->new_display('block', 'Aufgabe Firma', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<h2>Aufgaben</h2>';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -745,6 +749,8 @@ function cph_views_views_default_views() {
 
   /* Display: Aufgabe Firma Log */
   $handler = $view->new_display('block', 'Aufgabe Firma Log', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<h2>Aufgaben</h2>';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -898,8 +904,30 @@ function cph_views_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Panel aufgabe', 'vp_aufgaben');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'row';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 30, 40, 60';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_datum_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
   $handler->display->display_options['style_options']['columns'] = array(
     'field_aufgabe_1' => 'field_aufgabe_1',
     'field_verantwortlich' => 'field_verantwortlich',
@@ -909,6 +937,9 @@ function cph_views_views_default_views() {
     'field_ansprechpartner' => 'field_ansprechpartner',
     'field_telefon' => 'field_ansprechpartner',
     'field_aufgabe_status' => 'field_aufgabe_status',
+    'edit_node' => 'edit_node',
+    'field_telefon_1' => 'field_telefon_1',
+    'field_datum_1' => 'field_datum_1',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -962,6 +993,25 @@ function cph_views_views_default_views() {
       'empty_column' => 0,
     ),
     'field_aufgabe_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_telefon_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_datum_1' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1027,9 +1077,10 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['field_bemerkung']['id'] = 'field_bemerkung';
   $handler->display->display_options['fields']['field_bemerkung']['table'] = 'field_data_field_bemerkung';
   $handler->display->display_options['fields']['field_bemerkung']['field'] = 'field_bemerkung';
-  $handler->display->display_options['fields']['field_bemerkung']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['field_bemerkung']['alter']['max_length'] = '100';
   $handler->display->display_options['fields']['field_bemerkung']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['field_bemerkung']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_bemerkung']['element_default_classes'] = FALSE;
   /* Feld: Inhalt: Ansprechpartner */
   $handler->display->display_options['fields']['field_ansprechpartner']['id'] = 'field_ansprechpartner';
   $handler->display->display_options['fields']['field_ansprechpartner']['table'] = 'field_data_field_ansprechpartner';
@@ -1056,6 +1107,20 @@ function cph_views_views_default_views() {
   $handler->display->display_options['fields']['field_telefon_1']['table'] = 'field_data_field_telefon';
   $handler->display->display_options['fields']['field_telefon_1']['field'] = 'field_telefon';
   $handler->display->display_options['fields']['field_telefon_1']['relationship'] = 'reverse_field_ansprechpartner_node_1';
+  /* Feld: Inhalt: Datum */
+  $handler->display->display_options['fields']['field_datum_1']['id'] = 'field_datum_1';
+  $handler->display->display_options['fields']['field_datum_1']['table'] = 'field_data_field_datum';
+  $handler->display->display_options['fields']['field_datum_1']['field'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum_1']['label'] = 'Monat';
+  $handler->display->display_options['fields']['field_datum_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_datum_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_datum_1']['settings'] = array(
+    'format_type' => 'month_year',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sortierkriterien: Inhalt: Datum (field_datum) */
   $handler->display->display_options['sorts']['field_datum_value']['id'] = 'field_datum_value';
@@ -1269,7 +1334,7 @@ function cph_views_views_default_views() {
   $handler->display->display_options['path'] = 'reports/aufgabenliste';
   $translatables['aufgaben'] = array(
     t('Master'),
-    t('<h4>Aufgaben</h4>'),
+    t('<h3>Aufgaben</h3>'),
     t('mehr'),
     t('Anwenden'),
     t('Zurücksetzen'),
@@ -1290,15 +1355,24 @@ function cph_views_views_default_views() {
     t('Status (field_aufgabe_status)'),
     t('Typ'),
     t('Block Aufgabe Steckbrief'),
+    t('<h2>Aufgaben</h2>'),
     t('Alle'),
     t('Aufgabe Firma'),
     t('Beitrags-ID'),
     t('Aufgabe Firma Log'),
     t('Panel aufgabe'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('nächste Seite ›'),
+    t('letzte Seite »'),
     t('- keine Einträge gefunden -'),
     t('Inhalt referencing Inhalt from field_ansprechpartner'),
     t('Termin'),
     t('Bearbeiten'),
+    t('Monat'),
     t('vp Aufgaben'),
     t('Panel-Ansichten'),
     t('Seite'),

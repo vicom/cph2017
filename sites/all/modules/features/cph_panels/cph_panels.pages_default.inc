@@ -189,7 +189,7 @@ function cph_panels_default_page_manager_handlers() {
       'more_link' => 0,
       'feed_icons' => 0,
       'panel_args' => 0,
-      'link_to_view' => 1,
+      'link_to_view' => 0,
       'args' => '',
       'url' => '',
       'display' => 'block_1',
@@ -197,7 +197,8 @@ function cph_panels_default_page_manager_handlers() {
         0 => '',
       ),
       'override_title' => 1,
-      'override_title_text' => '<h4>Aufgaben</h4>',
+      'override_title_text' => '<h3>Aufgaben</h3>',
+      'offset' => '0',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -237,7 +238,8 @@ function cph_panels_default_page_manager_handlers() {
         0 => '',
       ),
       'override_title' => 1,
-      'override_title_text' => '<h4>Log-Buch</h4>',
+      'override_title_text' => '<h3>Log-Buch</h3>',
+      'offset' => '0',
     );
     $pane->cache = array();
     $pane->style = array(

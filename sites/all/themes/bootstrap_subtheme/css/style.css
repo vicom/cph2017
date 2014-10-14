@@ -114,6 +114,10 @@ body.type-hotellier .navbar-inverse {
   background-color: #003563;
   border-color: #080808;
 }
+body.type-hotellier .navbar {
+  background-color: #003563;
+  border-color: #080808;
+}
 body.type-hotellier .navbar .nav li.dropdown.open > .dropdown-toggle,
 body.type-hotellier .navbar .nav li.dropdown.active > .dropdown-toggle,
 body.type-hotellier .navbar .nav li.dropdown.open.active > .dropdown-toggle {

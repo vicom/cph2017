@@ -7,6 +7,9 @@ h1 {
 .block h3 {
   font-size: 18px;
 }
+.region-sidebar-first h2 {
+  font-size: 18px;
+}
 .views-table caption {
   text-align: left;
   font-size: 18px;

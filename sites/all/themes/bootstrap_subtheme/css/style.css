@@ -23,6 +23,11 @@ th {
   font-weight: 400;
   color: #999999;
 }
+div#edit-top-buttons.form-actions.form-wrapper.form-group {
+  position: absolute;
+  top: 90px;
+  background-color: #ffffff;
+}
 .form-control {
   height: 34px;
   padding: 6px 12px;

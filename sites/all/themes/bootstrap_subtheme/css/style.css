@@ -23,6 +23,9 @@ th {
   font-weight: 400;
   color: #999999;
 }
+div.form-type-checkboxes {
+  padding-left: 20px;
+}
 div#edit-top-buttons.form-actions.form-wrapper.form-group {
   position: absolute;
   top: 90px;

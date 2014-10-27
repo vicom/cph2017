@@ -2665,18 +2665,20 @@ function cph_views_views_default_views() {
   $handler->display->display_options['title'] = 'Liste - Unternehmen';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Verteilerliste (field_verteilerliste) */
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['id'] = 'field_verteilerliste_tid';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['table'] = 'field_data_field_verteilerliste';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['field'] = 'field_verteilerliste_tid';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['operator_id'] = 'field_verteilerliste_tid_op';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['label'] = 'Verteilerliste (field_verteilerliste)';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['operator'] = 'field_verteilerliste_tid_op';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['identifier'] = 'field_verteilerliste_tid';
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['remember_roles'] = array(
+  /* Filterkriterium: Inhalt: Titel */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Enthält';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -2686,8 +2688,6 @@ function cph_views_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_verteilerliste_tid']['vocabulary'] = 'firma_verteiler';
   /* Filterkriterium: Inhalt: Stichwort (field_stichwort) */
   $handler->display->display_options['filters']['field_stichwort_tid']['id'] = 'field_stichwort_tid';
   $handler->display->display_options['filters']['field_stichwort_tid']['table'] = 'field_data_field_stichwort';
@@ -2740,29 +2740,6 @@ function cph_views_views_default_views() {
     7 => 0,
     6 => 0,
   );
-  /* Filterkriterium: Inhalt: Titel */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Name';
-  $handler->display->display_options['filters']['title']['expose']['description'] = 'Enthält';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    8 => 0,
-    4 => 0,
-    5 => 0,
-    7 => 0,
-    6 => 0,
-  );
   /* Filterkriterium: Inhalt: Branche (field_branche) */
   $handler->display->display_options['filters']['field_branche_tid_1']['id'] = 'field_branche_tid_1';
   $handler->display->display_options['filters']['field_branche_tid_1']['table'] = 'field_data_field_branche';
@@ -2785,10 +2762,34 @@ function cph_views_views_default_views() {
     6 => 0,
   );
   $handler->display->display_options['filters']['field_branche_tid_1']['vocabulary'] = 'branche';
+  /* Filterkriterium: Inhalt: Verteilerliste (field_verteilerliste) */
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['id'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['table'] = 'field_data_field_verteilerliste';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['field'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['operator_id'] = 'field_verteilerliste_tid_op';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['label'] = 'Verteilerliste (field_verteilerliste)';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['operator'] = 'field_verteilerliste_tid_op';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['identifier'] = 'field_verteilerliste_tid';
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    8 => 0,
+    4 => 0,
+    5 => 0,
+    7 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_verteilerliste_tid']['vocabulary'] = 'firma_verteiler';
   /* Filterkriterium: Inhalt: Adresse - Ort (z.B. Stadt) */
   $handler->display->display_options['filters']['field_profil_adresse_locality']['id'] = 'field_profil_adresse_locality';
   $handler->display->display_options['filters']['field_profil_adresse_locality']['table'] = 'field_data_field_profil_adresse';
   $handler->display->display_options['filters']['field_profil_adresse_locality']['field'] = 'field_profil_adresse_locality';
+  $handler->display->display_options['filters']['field_profil_adresse_locality']['operator'] = 'contains';
   $handler->display->display_options['filters']['field_profil_adresse_locality']['group'] = 1;
   $handler->display->display_options['filters']['field_profil_adresse_locality']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_profil_adresse_locality']['expose']['operator_id'] = 'field_profil_adresse_locality_op';
@@ -2930,11 +2931,11 @@ function cph_views_views_default_views() {
     t('Page'),
     t('Hotelsuche'),
     t('Liste - Unternehmen'),
-    t('Verteilerliste (field_verteilerliste)'),
-    t('Stichwort (field_stichwort)'),
     t('Name'),
     t('Enthält'),
+    t('Stichwort (field_stichwort)'),
     t('Branche'),
+    t('Verteilerliste (field_verteilerliste)'),
     t('Stadt'),
     t('PLZ'),
     t('beginnt mit … (21, 225,  A-900)'),

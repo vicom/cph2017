@@ -641,14 +641,14 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_aufgabe',
-        1 => 'field_aufgabe_status',
-        2 => 'field_bemerkung',
-        3 => 'field_verantwortlich',
-        4 => 'field_ansprechpartner',
-        5 => 'field_ansprechpartner_alt',
-        6 => 'field_ansprechpartner_alt2',
-        7 => 'field_datum',
-        8 => 'field_datum_beendet',
+        1 => 'field_bemerkung',
+        2 => 'field_verantwortlich',
+        3 => 'field_ansprechpartner_alt',
+        4 => 'field_ansprechpartner_alt2',
+        5 => 'field_datum',
+        6 => 'field_ansprechpartner',
+        7 => 'field_datum_beendet',
+        8 => 'field_aufgabe_status',
         9 => 'node_link',
       ),
       'ds_hidden' => array(
@@ -658,22 +658,20 @@ function cph_display_suits_settings_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_aufgabe' => 'ds_content',
-      'field_aufgabe_status' => 'ds_content',
       'field_bemerkung' => 'ds_content',
       'field_verantwortlich' => 'ds_content',
-      'field_ansprechpartner' => 'ds_content',
       'field_ansprechpartner_alt' => 'ds_content',
       'field_ansprechpartner_alt2' => 'ds_content',
       'field_datum' => 'ds_content',
+      'field_ansprechpartner' => 'ds_content',
       'field_datum_beendet' => 'ds_content',
+      'field_aufgabe_status' => 'ds_content',
       'node_link' => 'ds_content',
       'ds_ansprechpartner' => 'ds_hidden',
       'ds_aufgabe_statusbar' => 'ds_hidden',
     ),
     'classes' => array(
-      'layout_class' => array(
-        'col-md-12' => 'col-md-12',
-      ),
+      'layout_class' => array(),
       'ds_content' => array(
         'well' => 'well',
       ),
@@ -1352,9 +1350,7 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'node_link' => 'ds_hidden',
     ),
     'classes' => array(
-      'layout_class' => array(
-        'col-md-4' => 'col-md-4',
-      ),
+      'layout_class' => array(),
     ),
     'wrappers' => array(
       'ds_content' => 'div',

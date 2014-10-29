@@ -26,6 +26,10 @@ th {
 div.form-type-checkboxes {
   padding-left: 20px;
 }
+.navbar button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 div#edit-top-buttons.form-actions.form-wrapper.form-group {
   position: absolute;
   top: 90px;
@@ -91,7 +95,7 @@ body.type-hotellier .core {
   margin: 0 auto;
 }
 body.type-hotellier .container {
-  width: 1066px;
+  max-width: 1066px;
 }
 body.type-hotellier .cph-head {
   background: url("http://cph-hotels.com/templates/cph_yaml_default/css/cph/img/header.png");
@@ -103,12 +107,21 @@ body.type-hotellier .cph-head {
 body.type-hotellier .bob img {
   padding-bottom: 12px;
 }
+body.type-hotellier .navbar button {
+  margin-bottom: 0;
+  margin-top: 3px;
+}
 body.type-hotellier div.main-container {
   background-color: #ffffff;
 }
 body.type-hotellier .well {
   background-color: transparent;
-  border: none;
+  border: 1px solid #c0c0c0;
+  border-radius: 0px;
+  box-shadow: none;
+  margin-bottom: 20px;
+  min-height: 20px;
+  padding: 19px;
 }
 body.type-hotellier .navbar-fixed-top .navbar-inner,
 body.type-hotellier .navbar-static-top .navbar-inner {
@@ -120,30 +133,38 @@ body.type-hotellier .navbar-fixed-top {
 body.type-hotellier #navbar {
   max-width: 1046px;
   margin-left: 10px;
+  min-height: 20px;
 }
 body.type-hotellier .navbar-inverse {
+  border-color: #c0c0c0;
   background-color: #003563;
-  border-color: #080808;
+  border-color: transparent;
 }
-body.type-hotellier .navbar {
-  background-color: #003563;
-  border-color: #080808;
+body.type-hotellier .navbar-nav > li > a {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  line-height: 20px;
 }
 body.type-hotellier .navbar .nav li.dropdown.open > .dropdown-toggle,
 body.type-hotellier .navbar .nav li.dropdown.active > .dropdown-toggle,
 body.type-hotellier .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #ffffff;
-  color: #CD1239;
+  color: #cd1239;
 }
 body.type-hotellier .navbar .nav > .active > a,
 body.type-hotellier .navbar .nav > .active > a:hover,
 body.type-hotellier .navbar .nav > .active > a:focus {
   color: #ffffff;
   text-decoration: none;
-  background-color: #E5E5E5;
+  background-color: #dedede;
   box-shadow: none;
 }
 body.type-hotellier .navbar .nav li a.active-trail {
   background-color: #ffffff;
-  color: #CD1239;
+  color: #cd1239;
+}
+body.type-hotellier .footer.container {
+  background-color: #a4062c;
+  min-height: 65px;
+  max-width: 1066px;
 }

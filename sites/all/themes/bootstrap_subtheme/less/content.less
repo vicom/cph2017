@@ -1,6 +1,13 @@
 // Insert your styling here.
 @extranetwidth:         1066px;
 
+//Project specific Colors for Hotelier
+@cphred:                #CD1239;
+@cphblue:               #003563;
+@cphoffwhite:           #dedede;
+@cphborder:             #c0c0c0;
+@cphreddark:            #a4062c;
+
 // Standards
 body {
 color: @gray-darker;
@@ -36,7 +43,10 @@ th {
 div.form-type-checkboxes {
 	padding-left: 20px;}
 
-
+.navbar button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 // Extra Top Buttons
 
 div#edit-top-buttons.form-actions.form-wrapper.form-group {
@@ -78,7 +88,6 @@ label {
     padding: 1px 15px;
 }
 
-
 // Unternehmen
 
 div.ds-1col.node.node-steckbrief {
@@ -95,7 +104,7 @@ div.field.field-name-neu {
 .views-field-field-personen-editable .views-row-edit-edit  {display: inline}
 
 
-// Section Hotellier
+// Section Hotelier
 
 // pre
 body.navbar-is-fixed-top {
@@ -103,11 +112,11 @@ body.navbar-is-fixed-top {
 	}
 
 
-// Hoteliier Portal
+// Hotelier Portal
 body.type-hotellier {
  	background-color: #eee;
 	padding-top: 0;
-	color: #003563;
+	color: @cphblue;
 	padding-top: 2px;
 	margin: 0 auto;
 	 
@@ -119,7 +128,7 @@ body.type-hotellier {
  		background-color: white;
  		margin: 0 auto;}
  	.container {
- 		width: @extranetwidth
+ 		max-width: @extranetwidth
  		}
 	.cph-head {
 		background: url("http://cph-hotels.com/templates/cph_yaml_default/css/cph/img/header.png");
@@ -130,15 +139,24 @@ body.type-hotellier {
 		}
 	.bob img {
 		padding-bottom: 12px;
-		}	
+		}
+
+    .navbar button {
+      margin-bottom: 0;
+      margin-top: 3px;
+    }
 	div.main-container  {
 		background-color: #ffffff;
 		}
-	
-	.well {
-		background-color: transparent;
-		border: none
-		}
+    .well {
+           background-color: transparent;
+           border: 1px solid @cphborder;
+           border-radius: 0px;
+           box-shadow: none;
+           margin-bottom: 20px;
+           min-height: 20px;
+           padding: 19px;
+         }
 	.navbar-fixed-top .navbar-inner,  .navbar-static-top .navbar-inner {
 		box-shadow: none;
 		}		
@@ -148,29 +166,39 @@ body.type-hotellier {
 	#navbar  {
  		max-width: (@extranetwidth - 20); 
  		margin-left: 10px;
+        min-height: 20px;
 		}
 	.navbar-inverse {
-		background-color: #003563;
-		border-color: #080808;
+		background-color: @cphblue;
+		border-color: @cphborder;
+        background-color: @cphblue;
+        border-color: transparent;
 		}
-		
-		.navbar {
-		background-color: #003563;
-		border-color: #080808;
-		}
-	.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+
+    .navbar-nav>li>a {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        line-height: 20px
+  }
+    .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
 		background-color: #ffffff;
-		color: #CD1239;
+		color: @cphred;
 		}
  	.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
 		color: #ffffff;
 		text-decoration: none;
-		background-color: #E5E5E5;
+		background-color: @cphoffwhite;
 		box-shadow: none;
 		}
+
 	.navbar .nav li a.active-trail {
 		background-color: #ffffff;
-		color: #CD1239;
+		color: @cphred;
 		}
+    .footer.container {
+        background-color: @cphreddark;
+        min-height: 65px;
+        max-width: @extranetwidth;
+    }
 }
 

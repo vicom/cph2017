@@ -17,7 +17,7 @@ function cph_block_class_block_class_features_default_class() {
     'masquerade:masquerade' => array(
       'module' => 'masquerade',
       'delta' => 'masquerade',
-      'css_classes' => 'hidden-xs hidden-sm',
+      'css_classes' => 'hidden-xs hidden-sm col-md-4',
     ),
     'menu_block:1' => array(
       'module' => 'menu_block',

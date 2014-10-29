@@ -1,13 +1,12 @@
 # Ignore configuration files that may contain sensitive information.
 # Ignore paths that contain user-generated content.
-sites/default/files
-sites/default/default.settings.php
-sites/default/settings.php
+sites/default/*
 .DS_Store
 .svn/
 .buildpath
 MAMP_php_error_log_MAMP
 nbproject
-bigdump-cph Kopie.php
-bigdump-cph.php
+bigdump*
 *.mysql.gz
+db*
+.ideas

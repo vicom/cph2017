@@ -14,6 +14,11 @@ function cph_block_class_block_class_features_default_class() {
       'delta' => '1',
       'css_classes' => 'links inline clearfix main-menu',
     ),
+    'block:3' => array(
+      'module' => 'block',
+      'delta' => '3',
+      'css_classes' => 'col-sm-2',
+    ),
     'masquerade:masquerade' => array(
       'module' => 'masquerade',
       'delta' => 'masquerade',

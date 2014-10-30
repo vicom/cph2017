@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CPH ConType CMS feature.
+ */
+
+include_once 'cph_contype_cms.features.inc';

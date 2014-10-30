@@ -87,6 +87,24 @@ body.type-hotellier {
   margin: 0 auto;
 }
 body.type-hotellier h1 {
+  font-size: 22.4px;
+}
+body.type-hotellier h2 {
+  font-size: 21px;
+}
+body.type-hotellier h3 {
+  font-size: 16.799999999999997px;
+}
+body.type-hotellier h4 {
+  font-size: 12.6px;
+}
+body.type-hotellier h5 {
+  font-size: 9.799999999999999px;
+}
+body.type-hotellier h5 {
+  font-size: 9.799999999999999px;
+}
+body.type-hotellier h1 {
   font-size: 1.4em;
 }
 body.type-hotellier .core {

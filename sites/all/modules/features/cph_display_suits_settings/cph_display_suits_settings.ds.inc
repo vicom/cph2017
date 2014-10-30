@@ -12,6 +12,78 @@ function cph_display_suits_settings_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|article|sticky';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'article';
+  $ds_fieldsetting->view_mode = 'sticky';
+  $ds_fieldsetting->settings = array(
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-sm-8',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'col-sm-3',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'class',
+          'fi-cl' => 'img-responsive',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node|article|sticky'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|article|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'article';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'submitted_by' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_short',
+    ),
+  );
+  $export['node|article|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|aufgabe|set1';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'aufgabe';
@@ -90,6 +162,27 @@ function cph_display_suits_settings_ds_field_settings_info() {
     ),
   );
   $export['node|aufgabe|set1'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|faq|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'faq';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'strong',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+  );
+  $export['node|faq|teaser'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -427,7 +520,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'set1';
   $ds_fieldsetting->settings = array(
     'neu' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -443,7 +536,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -468,6 +561,23 @@ function cph_display_suits_settings_ds_field_settings_info() {
     ),
   );
   $export['node|steckbrief|set1'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|steckbrief|set2';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'steckbrief';
+  $ds_fieldsetting->view_mode = 'set2';
+  $ds_fieldsetting->settings = array(
+    'field_sprachen_tax' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Sprache',
+        ),
+      ),
+    ),
+  );
+  $export['node|steckbrief|set2'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -1334,10 +1444,11 @@ function cph_display_suits_settings_ds_layout_settings_info() {
         2 => 'field_hauptap',
         3 => 'field_telefon',
         4 => 'field_e_mail',
-        5 => 'neu',
+        5 => 'field_tel_mobil',
+        6 => 'neu',
       ),
       'ds_hidden' => array(
-        6 => 'node_link',
+        7 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -1346,11 +1457,14 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_hauptap' => 'ds_content',
       'field_telefon' => 'ds_content',
       'field_e_mail' => 'ds_content',
+      'field_tel_mobil' => 'ds_content',
       'neu' => 'ds_content',
       'node_link' => 'ds_hidden',
     ),
     'classes' => array(
-      'layout_class' => array(),
+      'layout_class' => array(
+        'col-md-3' => 'col-md-3',
+      ),
     ),
     'wrappers' => array(
       'ds_content' => 'div',

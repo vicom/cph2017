@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CPH Imagestyle feature.
+ */
+
+include_once 'cph_image.features.inc';

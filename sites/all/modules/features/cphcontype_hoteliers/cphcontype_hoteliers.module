@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CPHConType Hoteliers feature.
+ */
+
+include_once 'cphcontype_hoteliers.features.inc';

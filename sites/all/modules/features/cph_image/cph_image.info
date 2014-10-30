@@ -1,0 +1,8 @@
+name = CPH Imagestyle
+core = 7.x
+package = CPH Features
+version = 7.x-1.0
+project = cph_image
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = home_carousel

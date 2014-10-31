@@ -10,5 +10,11 @@ function bootstrap_subtheme_preprocess_html(&$vars) {
     $vars['classes_array'][] = 'type-' . drupal_html_class($role);
   }
 }
+function bootstrap_subtheme_preprocess_image_style(&$vars)
+{
+    $vars['attributes']['class'][] = 'img-responsive';
+    // http://getbootstrap.com/css/#overview-responsive-images
+}
+
 
 ?>

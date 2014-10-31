@@ -83,7 +83,7 @@ label {
  	}	
 
 .menu-name-menu-cph-funktionen .nav>li>a {
-    position: relative;
+  position: relative;
     display: block;
     padding: 1px 15px;
 }
@@ -97,7 +97,6 @@ div.field.field-name-neu {
 	padding-top: 10px;
 	}
 
-
 // Specials 
 
 .views-field-field-personen-editable .views-row-edit-static {display: none;}
@@ -110,102 +109,129 @@ div.field.field-name-neu {
 body.navbar-is-fixed-top {
     padding-top: 6px !important;
 	}
+body.page-user.type-hotellier .region-content {
+  position: relative;top:-100px;
+  }
+
 
 
 // Hotelier Portal
+
 body.type-hotellier {
- 	background-color: #eee;
-	padding-top: 0;
-	color: @cphblue;
-	padding-top: 2px;
-	margin: 0 auto;
+  background-color: #eee;
+  padding-top: 0;
+  color: @cphblue;
+  padding-top: 2px;
+  margin: 0 auto;
 
-      h1 {font-size: @font-size-h1 * .7;}
-      h2 {font-size: @font-size-h2 * .7;}
-      h3 {font-size: @font-size-h3 * .7;}
-      h4 {font-size: @font-size-h4 * .7;}
-      h5 {font-size: @font-size-h5 * .7;}
-      h5 {font-size: @font-size-h5 * .7;}
-
-	 h1 {
-		font-size: 1.4em;
-		}
- 	.core {
- 		max-width: @extranetwidth; 
- 		background-color: white;
- 		margin: 0 auto;}
- 	.container {
- 		max-width: @extranetwidth
- 		}
-	.cph-head {
-		background: url("http://cph-hotels.com/templates/cph_yaml_default/css/cph/img/header.png");
-		height: 118px;
-		margin-top: 10px;
-		margin-left: 10px;
-		margin-right: 10px;
-		}
-	.bob img {
-		padding-bottom: 12px;
-		}
-
-    .navbar button {
-      margin-bottom: 0;
-      margin-top: 3px;
+  h1 {
+    font-size: @font-size-h1 * .7;
     }
-	div.main-container  {
-		background-color: #ffffff;
-		}
-    .well {
-           background-color: transparent;
-           border: 1px solid @cphborder;
-           border-radius: 0px;
-           box-shadow: none;
-           margin-bottom: 20px;
-           min-height: 20px;
-           padding: 19px;
-         }
-	.navbar-fixed-top .navbar-inner,  .navbar-static-top .navbar-inner {
-		box-shadow: none;
-		}		
-	.navbar-fixed-top {
-		position: relative
-		}
-	#navbar  {
- 		max-width: (@extranetwidth - 20); 
- 		margin-left: 10px;
-        min-height: 20px;
-		}
-	.navbar-inverse {
-		background-color: @cphblue;
-		border-color: @cphborder;
-        background-color: @cphblue;
-        border-color: transparent;
-		}
+  h2 {
+    font-size: @font-size-h2 * .7;
+    }
+  h3 {
+    font-size: @font-size-h3 * .7;
+    }
+  h4 {
+    font-size: @font-size-h4 * .7;
+    }
+  h5 {
+    font-size: @font-size-h5 * .7;
+    }
+  h5 {
+    font-size: @font-size-h5 * .7;
+    }
 
-    .navbar-nav>li>a {
-        padding-top: 7px;
-        padding-bottom: 7px;
-        line-height: 20px
+  h1 {
+    font-size: 1.4em;
+    }
+  .core {
+    max-width: @extranetwidth;
+    background-color: white;
+    margin: 0 auto;
+    }
+  .container {
+    max-width: @extranetwidth
+    }
+  .cph-head {
+    background: url("http://cph-hotels.com/templates/cph_yaml_default/css/cph/img/header.png");
+    height: 118px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+  h1.page-header {
+    visibility: hidden;
+    }
+  .bob img {
+    padding-bottom: 12px;
+    }
+  .nav-tabs {
+    visibility: hidden;
+    }
+
+  .navbar button {
+    margin-bottom: 0;
+    margin-top: 3px;
+    }
+  div.main-container {
+    background-color: #ffffff;
+    }
+  .well {
+    background-color: transparent;
+    border: 1px solid @cphborder;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+    }
+  .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+    box-shadow: none;
+    }
+  .navbar-fixed-top {
+    position: relative
+    }
+  #navbar {
+    max-width: (@extranetwidth - 20);
+    margin-left: 10px;
+    min-height: 20px;
+    }
+  .navbar-inverse {
+    background-color: @cphblue;
+    border-color: @cphborder;
+    background-color: @cphblue;
+    border-color: transparent;
+    }
+
+  .navbar-nav > li > a {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    line-height: 20px
+    }
+  .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: #ffffff;
+    color: @cphred;
+    }
+  .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: @cphoffwhite;
+    box-shadow: none;
+    }
+
+  .navbar .nav li a.active-trail {
+    background-color: #ffffff;
+    color: @cphred;
+    }
+  .footer.container {
+    background-color: @cphreddark;
+    min-height: 65px;
+    max-width: @extranetwidth;
+    }
   }
-    .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-		background-color: #ffffff;
-		color: @cphred;
-		}
- 	.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
-		color: #ffffff;
-		text-decoration: none;
-		background-color: @cphoffwhite;
-		box-shadow: none;
-		}
 
-	.navbar .nav li a.active-trail {
-		background-color: #ffffff;
-		color: @cphred;
-		}
-    .footer.container {
-        background-color: @cphreddark;
-        min-height: 65px;
-        max-width: @extranetwidth;
-    }
-}
+
+  // Testground
 

@@ -79,6 +79,10 @@ div.field.field-name-neu {
 body.navbar-is-fixed-top {
   padding-top: 6px !important;
 }
+body.page-user.type-hotellier .region-content {
+  position: relative;
+  top: -100px;
+}
 body.type-hotellier {
   background-color: #eee;
   padding-top: 0;
@@ -122,8 +126,14 @@ body.type-hotellier .cph-head {
   margin-left: 10px;
   margin-right: 10px;
 }
+body.type-hotellier h1.page-header {
+  visibility: hidden;
+}
 body.type-hotellier .bob img {
   padding-bottom: 12px;
+}
+body.type-hotellier .nav-tabs {
+  visibility: hidden;
 }
 body.type-hotellier .navbar button {
   margin-bottom: 0;

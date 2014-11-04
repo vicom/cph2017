@@ -73,12 +73,19 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'page' => 'page',
+    'faq' => 'faq',
   );
   /* Filterkriterium: Inhalt: am Anfang von Listen */
   $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['value'] = '0';
+  /* Filterkriterium: Inhalt: Auf der Startseite */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -162,6 +169,8 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'page' => 'page',
+    'faq' => 'faq',
   );
   /* Filterkriterium: Inhalt: am Anfang von Listen */
   $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
@@ -3438,23 +3447,24 @@ function cph_views_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Feld: Inhalt: Titel */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Feld: Inhalt: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = 'Bild';
-  /* Sortierkriterien: Inhalt: Beitragsdatum */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Feld: Inhalt: Anzeigen */
+  $handler->display->display_options['fields']['field_anzeigen']['id'] = 'field_anzeigen';
+  $handler->display->display_options['fields']['field_anzeigen']['table'] = 'field_data_field_anzeigen';
+  $handler->display->display_options['fields']['field_anzeigen']['field'] = 'field_anzeigen';
+  $handler->display->display_options['fields']['field_anzeigen']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_anzeigen']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_anzeigen']['settings'] = array(
+    'image_style' => 'anzeige_',
+    'image_link' => 'content',
+    'field_multiple_limit' => '1',
+    'field_multiple_limit_offset' => '0',
+  );
+  $handler->display->display_options['fields']['field_anzeigen']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_anzeigen']['delta_offset'] = '0';
+  /* Sortierkriterien: Global: Zufall */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -3469,6 +3479,11 @@ function cph_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'schaufenster' => 'schaufenster',
   );
+  /* Filterkriterium: Inhalt: Auf der Startseite */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
 
   /* Display: Panel Steckbrief - Caro */
   $handler = $view->new_display('panel_pane', 'Panel Steckbrief - Caro', 'panel_pane_1');
@@ -3482,22 +3497,6 @@ function cph_views_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'home_carousel',
-    'image_link' => 'content',
-    'field_multiple_limit' => '1',
-    'field_multiple_limit_offset' => '0',
-  );
-  $handler->display->display_options['fields']['field_image']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_image']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sortierkriterien: Global: Zufall */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
@@ -3529,7 +3528,7 @@ function cph_views_views_default_views() {
     t('‹ vorherige Seite'),
     t('nächste Seite ›'),
     t('letzte Seite »'),
-    t('Bild'),
+    t('Anzeigen'),
     t('Panel Steckbrief - Caro'),
     t('Panel-Ansichten'),
     t('Panel Inhalt 2'),

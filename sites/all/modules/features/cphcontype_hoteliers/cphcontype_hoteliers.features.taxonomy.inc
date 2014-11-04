@@ -13,7 +13,7 @@ function cphcontype_hoteliers_taxonomy_default_vocabularies() {
       'name' => 'Inhalte',
       'machine_name' => 'inhalte',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

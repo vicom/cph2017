@@ -17,6 +17,17 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'article';
   $ds_fieldsetting->view_mode = 'sticky';
   $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h2',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
     'body' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -34,17 +45,17 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => ' col-xs-4',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
           'fis' => TRUE,
           'fis-el' => 'div',
-          'fis-cl' => 'col-sm-3',
+          'fis-cl' => 'thumbnail',
           'fis-at' => '',
           'fis-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'class',
-          'fi-cl' => 'img-responsive',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
         ),
       ),
     ),
@@ -63,7 +74,7 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h3',
         'class' => '',
         'ft' => array(),
@@ -75,9 +86,27 @@ function cph_display_suits_settings_ds_field_settings_info() {
       'format' => 'default',
     ),
     'submitted_by' => array(
-      'weight' => '1',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'ds_post_date_short',
+    ),
+    'field_image' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'col-xs-2',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'thumbnail',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
     ),
   );
   $export['node|article|teaser'] = $ds_fieldsetting;
@@ -438,8 +467,19 @@ function cph_display_suits_settings_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'schaufenster';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'lightbox' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lbw' => 1,
+        ),
+      ),
+    ),
     'author' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'inline',
       'format' => 'author',
     ),
@@ -1265,15 +1305,17 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_image',
         1 => 'body',
-        2 => 'field_dokumente',
-        3 => 'field_anbieter',
-        4 => 'field_anbieter_kontakt_extra',
-        5 => 'author',
+        2 => 'lightbox',
+        3 => 'field_dokumente',
+        4 => 'field_anbieter',
+        5 => 'field_anbieter_kontakt_extra',
+        6 => 'author',
       ),
     ),
     'fields' => array(
       'field_image' => 'ds_content',
       'body' => 'ds_content',
+      'lightbox' => 'ds_content',
       'field_dokumente' => 'ds_content',
       'field_anbieter' => 'ds_content',
       'field_anbieter_kontakt_extra' => 'ds_content',

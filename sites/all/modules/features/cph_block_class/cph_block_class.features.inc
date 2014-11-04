@@ -11,37 +11,37 @@ function cph_block_class_block_class_features_default_class() {
   return array(
     'block:1' => array(
       'module' => 'block',
-      'delta' => '1',
+      'delta' => 1,
       'css_classes' => 'links inline clearfix main-menu',
     ),
     'block:3' => array(
       'module' => 'block',
-      'delta' => '3',
+      'delta' => 3,
       'css_classes' => 'col-sm-2',
     ),
     'masquerade:masquerade' => array(
       'module' => 'masquerade',
       'delta' => 'masquerade',
-      'css_classes' => 'hidden-xs hidden-sm col-md-4',
+      'css_classes' => 'hidden-xs hidden-sm col-md-3',
     ),
     'menu_block:1' => array(
       'module' => 'menu_block',
-      'delta' => '1',
+      'delta' => 1,
       'css_classes' => 'links inline clearfix main-menu',
     ),
     'menu_block:2' => array(
       'module' => 'menu_block',
-      'delta' => '2',
+      'delta' => 2,
       'css_classes' => 'links main-menu',
     ),
     'menu_block:3' => array(
       'module' => 'menu_block',
-      'delta' => '3',
+      'delta' => 3,
       'css_classes' => 'links main-menu hidden-xs hidden-sm small',
     ),
     'multiblock:1' => array(
       'module' => 'multiblock',
-      'delta' => '1',
+      'delta' => 1,
       'css_classes' => 'visible-xs visible-sm',
     ),
     'user:online' => array(

@@ -1062,14 +1062,24 @@ function cph_panels_default_page_manager_handlers() {
     $pane->subtype = 'aktuell-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'link_to_view' => 1,
+      'more_link' => 0,
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '1',
+      'offset' => '0',
+      'path' => '',
+      'override_title' => 1,
+      'override_title_text' => '<h3>Top Thema</h3>',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'well well-lg',
+      'css_class' => 'well well-sm',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -1100,7 +1110,7 @@ function cph_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-sm-offset-2',
+      'css_class' => 'col-sm-offset-2 well well-sm',
     );
     $pane->extras = array();
     $pane->position = 1;
@@ -1163,7 +1173,7 @@ function cph_panels_default_page_manager_handlers() {
       'more_link' => 0,
       'use_pager' => 0,
       'pager_id' => '0',
-      'items_per_page' => '0',
+      'items_per_page' => '6',
       'offset' => '0',
       'override_title' => 1,
       'override_title_text' => 'FAQ',
@@ -1187,7 +1197,7 @@ function cph_panels_default_page_manager_handlers() {
     $pane->panel = 'right';
     $pane->type = 'entity_view';
     $pane->subtype = 'user';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'view_mode' => 'full',
@@ -1207,29 +1217,33 @@ function cph_panels_default_page_manager_handlers() {
     $display->content['new-bbf39122-f3ce-4b56-b174-d7a12f7b1bfa'] = $pane;
     $display->panels['right'][2] = 'new-bbf39122-f3ce-4b56-b174-d7a12f7b1bfa';
     $pane = new stdClass();
-    $pane->pid = 'new-ff60943c-4881-4e82-a4c3-25015eb800b2';
+    $pane->pid = 'new-4179093b-a514-43f6-ae72-38f97c858cce';
     $pane->panel = 'top';
-    $pane->type = 'token';
-    $pane->subtype = 'user:field-steckbrief';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'sanitize' => 1,
-      'context' => 'argument_entity_id:user_1',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<h1>Willkommen %user:name</h1>',
+      'format' => 'filtered_html',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'row h1',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ff60943c-4881-4e82-a4c3-25015eb800b2';
-    $display->content['new-ff60943c-4881-4e82-a4c3-25015eb800b2'] = $pane;
-    $display->panels['top'][0] = 'new-ff60943c-4881-4e82-a4c3-25015eb800b2';
+    $pane->uuid = '4179093b-a514-43f6-ae72-38f97c858cce';
+    $display->content['new-4179093b-a514-43f6-ae72-38f97c858cce'] = $pane;
+    $display->panels['top'][0] = 'new-4179093b-a514-43f6-ae72-38f97c858cce';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-bbf39122-f3ce-4b56-b174-d7a12f7b1bfa';
   $handler->conf['display'] = $display;

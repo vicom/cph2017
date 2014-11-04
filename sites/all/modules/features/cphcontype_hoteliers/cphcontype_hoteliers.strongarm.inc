@@ -178,10 +178,10 @@ function cphcontype_hoteliers_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '7',
         ),
       ),
       'display' => array(),
@@ -283,6 +283,7 @@ function cphcontype_hoteliers_strongarm() {
   $strongarm->name = 'node_options_schaufenster';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_schaufenster'] = $strongarm;
 

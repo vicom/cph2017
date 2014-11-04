@@ -36,7 +36,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -82,7 +82,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => -1,
           'field_multiple_limit_offset' => 0,
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'large',
         ),
         'type' => 'image',
@@ -94,17 +94,23 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'settings' => array(
           'field_multiple_limit' => 1,
           'field_multiple_limit_offset' => 0,
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'medium',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
+        'module' => 'image',
+        'settings' => array(
+          'field_multiple_limit' => 1,
+          'field_multiple_limit_offset' => 0,
+          'image_link' => 'content',
+          'image_style' => 'thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -158,13 +164,13 @@ function cphcontype_hoteliers_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -274,7 +280,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -295,7 +301,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -334,7 +340,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -353,7 +359,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -382,7 +388,54 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-schaufenster-field_anzeigen'
+  $field_instances['node-schaufenster-field_anzeigen'] = array(
+    'bundle' => 'schaufenster',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_anzeigen',
+    'label' => 'Anzeigen',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'anzeigen',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'medium',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 8,
     ),
   );
 
@@ -400,7 +453,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
           'field_multiple_limit_offset' => 0,
         ),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -429,7 +482,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -482,7 +535,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'imagefield_crop',
+      'module' => 'image',
       'settings' => array(
         'collapsible' => 2,
         'croparea' => '500x500',
@@ -490,10 +543,10 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'enforce_ratio' => 1,
         'preview_image_style' => 'home_carousel',
         'progress_indicator' => 'throbber',
-        'resolution' => '200x150',
+        'resolution' => '350x200',
       ),
-      'type' => 'imagefield_crop_widget',
-      'weight' => 7,
+      'type' => 'image_image',
+      'weight' => 4,
     ),
   );
 
@@ -508,7 +561,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -539,7 +592,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -547,6 +600,7 @@ function cphcontype_hoteliers_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Anbieter');
   t('Anbieter Kontakt extra');
+  t('Anzeigen');
   t('Body');
   t('Dokumente');
   t('Durch Kommata getrennte Schlagwörter eingeben, die den Inhalt beschreiben.');

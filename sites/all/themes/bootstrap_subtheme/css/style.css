@@ -77,7 +77,7 @@ div.field.field-name-neu {
   display: inline;
 }
 body.navbar-is-fixed-top {
-  padding-top: 6px !important;
+  padding-top: 60px !important;
 }
 body.page-user.type-hotellier .region-content {
   position: relative;
@@ -89,6 +89,9 @@ body.type-hotellier {
   color: #003563;
   padding-top: 2px;
   margin: 0 auto;
+}
+body.type-hotellier body.navbar-is-fixed-top {
+  padding-top: 6px !important;
 }
 body.type-hotellier h1 {
   font-size: 22.4px;

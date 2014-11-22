@@ -1,7 +1,7 @@
 name = CPH ConType CRM
 core = 7.x
 package = CPH Features
-version = 7.x-1.0
+version = 7.x-1.1
 project = cph_contype_cms
 dependencies[] = addressfield
 dependencies[] = ctools

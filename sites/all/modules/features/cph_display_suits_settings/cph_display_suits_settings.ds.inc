@@ -798,12 +798,12 @@ function cph_display_suits_settings_ds_layout_settings_info() {
         5 => 'field_datum',
         6 => 'field_ansprechpartner',
         7 => 'field_datum_beendet',
-        8 => 'field_aufgabe_status',
-        9 => 'node_link',
+        8 => 'node_link',
+        11 => 'field_aufgabe_status',
       ),
       'ds_hidden' => array(
-        10 => 'ds_ansprechpartner',
-        11 => 'ds_aufgabe_statusbar',
+        9 => 'ds_ansprechpartner',
+        10 => 'ds_aufgabe_statusbar',
       ),
     ),
     'fields' => array(
@@ -815,10 +815,10 @@ function cph_display_suits_settings_ds_layout_settings_info() {
       'field_datum' => 'ds_content',
       'field_ansprechpartner' => 'ds_content',
       'field_datum_beendet' => 'ds_content',
-      'field_aufgabe_status' => 'ds_content',
       'node_link' => 'ds_content',
       'ds_ansprechpartner' => 'ds_hidden',
       'ds_aufgabe_statusbar' => 'ds_hidden',
+      'field_aufgabe_status' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(),

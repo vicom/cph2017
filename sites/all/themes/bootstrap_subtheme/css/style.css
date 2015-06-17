@@ -94,13 +94,16 @@ body.type-hotellier body.navbar-is-fixed-top {
   padding-top: 6px !important;
 }
 body.type-hotellier h1 {
-  font-size: 22.4px;
+  font-size: 20.8px;
+  margin-top: 0px;
 }
 body.type-hotellier h2 {
-  font-size: 21px;
+  font-size: 18px;
+  margin-top: 0px;
 }
 body.type-hotellier h3 {
   font-size: 16.799999999999997px;
+  margin-top: 0px;
 }
 body.type-hotellier h4 {
   font-size: 12.6px;
@@ -113,6 +116,9 @@ body.type-hotellier h5 {
 }
 body.type-hotellier h1 {
   font-size: 1.4em;
+}
+body.type-hotellier a {
+  color: #900d28;
 }
 body.type-hotellier .core {
   max-width: 1066px;
@@ -198,4 +204,57 @@ body.type-hotellier .footer.container {
   background-color: #a4062c;
   min-height: 65px;
   max-width: 1066px;
+}
+.form-item-field-profil-adresse-postal-code {
+  width: 120px;
+}
+.form-item-field-profil-adresse-country {
+  width: 200px;
+}
+.form-item-field-profil-adresse-locality {
+  width: 120px;
+}
+.form-item-field-verteilerliste-tid {
+  width: 300px;
+}
+.form-item-field-branche-tid-1 {
+  width: 200px;
+}
+.form-item-field-stichwort-tid {
+  width: 200px;
+}
+.form-item-title {
+  width: 400px;
+}
+.set-aufgabe .field-name-field-datum-beendet {
+  display: none;
+}
+.npl {
+  padding-left: 0px;
+}
+.npr {
+  padding-right: 0px;
+}
+.epb {
+  padding-bottom: 17px;
+}
+.elb {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 17px;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #E0E0D8;
+}
+#block-multiblock-4 a.nav  li > a:hover,
+#block-multiblock-4 .nav  li > a:focus {
+  text-decoration: none;
+  height: 0px;
+  display: none;
+}#block-multiblock-4 a.nav > li > a:hover,
+#block-multiblock-4 .nav > li > a:focus {
+  text-decoration: none;
+  height: 0px;
+  display: none;
 }

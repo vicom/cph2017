@@ -14,5 +14,10 @@ function bootstrap_subtheme_preprocess_html(&$vars) {
 function bootstrap_subtheme_preprocess_image_style(&$vars) {
 $vars['attributes']['class'][] = 'img-responsive'; // http://getbootstrap.com/css/#overview-responsive-images
 }
+function bootstrap_subtheme_preprocess_page(&$vars) {
+ if (isset($vars['node'])) {
+$vars['theme_hook_suggestion'] = 'page__'.$vars['node']->type; 
+}
+}
 
 ?>

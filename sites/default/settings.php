@@ -208,10 +208,10 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'db271743_4',
-      'username' => 'db271743_4',
-      'password' => 'TB613F3mP7',
-      'host' => 'mysql5.just-in-place.com',
+      'database' => 'cph',
+      'username' => 'root',
+      'password' => 'root',
+      'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',

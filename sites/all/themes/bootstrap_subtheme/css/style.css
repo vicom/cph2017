@@ -208,6 +208,6 @@ body.type-hotellier .footer.container {
 .aufgaben-sichtbarkeit-notizzettel {
   background-color: #ffff66;
 }
-div.panel-pane div.node thumbnail {
+div.panel-pane div.node .thumbnail {
   padding: 12px;
 }

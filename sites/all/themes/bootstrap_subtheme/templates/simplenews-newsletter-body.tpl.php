@@ -29,7 +29,6 @@
 ?>
 
 <div class="newsletter-head">
-    <img height="119" border="0" width="1024" alt="Newsletter" src="http://www.cph-intranet.de/sites/default/files/newsletter/cph-header.png">  bbbbbbbbbbbb</div>
-<h2><?php print $simplenews_subscriber; ?></h2>
+    <img height="119" border="0" width="1024" alt="Newsletter" src="http://www.cph-intranet.de/sites/default/files/newsletter/cph-header.png"></div>
 <h2><?php print $title; ?></h2>
 <?php print render($build); ?>

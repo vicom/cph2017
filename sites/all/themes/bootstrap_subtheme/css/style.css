@@ -211,6 +211,9 @@ body.type-hotellier .footer.container {
 .aufgaben-sichtbarkeit-in-planung {
   background-color: #ff9999;
 }
+.aufgaben-sichtbarkeit-hotelier-sichtbar {
+  background-color: #e6ffe6;
+}
 .view-notizen .thumbnail {
   margin: 12px;
   padding: 3px;

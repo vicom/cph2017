@@ -83,87 +83,69 @@ body.page-user.type-hotellier .region-content {
   position: relative;
   top: -100px;
 }
-body.type-hotellier,
-body.type-anonymous-user {
+body.type-hotellier {
   background-color: #eee;
   padding-top: 0;
   color: #003563;
   padding-top: 2px;
   margin: 0 auto;
 }
-body.type-hotellier body.navbar-is-fixed-top,
-body.type-anonymous-user body.navbar-is-fixed-top {
+body.type-hotellier body.navbar-is-fixed-top {
   padding-top: 6px !important;
 }
-body.type-hotellier h1,
-body.type-anonymous-user h1 {
+body.type-hotellier h1 {
   font-size: 22.4px;
 }
-body.type-hotellier h2,
-body.type-anonymous-user h2 {
+body.type-hotellier h2 {
   font-size: 21px;
 }
-body.type-hotellier h3,
-body.type-anonymous-user h3 {
+body.type-hotellier h3 {
   font-size: 16.799999999999997px;
 }
-body.type-hotellier h4,
-body.type-anonymous-user h4 {
+body.type-hotellier h4 {
   font-size: 12.6px;
 }
-body.type-hotellier h5,
-body.type-anonymous-user h5 {
+body.type-hotellier h5 {
   font-size: 9.799999999999999px;
 }
-body.type-hotellier h5,
-body.type-anonymous-user h5 {
+body.type-hotellier h5 {
   font-size: 9.799999999999999px;
 }
-body.type-hotellier h1,
-body.type-anonymous-user h1 {
+body.type-hotellier h1 {
   font-size: 1.4em;
 }
-body.type-hotellier .core,
-body.type-anonymous-user .core {
+body.type-hotellier .core {
   max-width: 1066px;
   background-color: white;
   margin: 0 auto;
 }
-body.type-hotellier .container,
-body.type-anonymous-user .container {
+body.type-hotellier .container {
   max-width: 1066px;
 }
-body.type-hotellier .cph-head,
-body.type-anonymous-user .cph-head {
+body.type-hotellier .cph-head {
   background: url("http://cph-hotels.com/templates/cph_yaml_default/css/cph/img/header.png");
   height: 118px;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
-body.type-hotellier h1.page-header,
-body.type-anonymous-user h1.page-header {
+body.type-hotellier h1.page-header {
   visibility: hidden;
 }
-body.type-hotellier .bob img,
-body.type-anonymous-user .bob img {
+body.type-hotellier .bob img {
   padding-bottom: 12px;
 }
-body.type-hotellier .nav-tabs,
-body.type-anonymous-user .nav-tabs {
+body.type-hotellier .nav-tabs {
   visibility: hidden;
 }
-body.type-hotellier .navbar button,
-body.type-anonymous-user .navbar button {
+body.type-hotellier .navbar button {
   margin-bottom: 0;
   margin-top: 3px;
 }
-body.type-hotellier div.main-container,
-body.type-anonymous-user div.main-container {
+body.type-hotellier div.main-container {
   background-color: #ffffff;
 }
-body.type-hotellier .well,
-body.type-anonymous-user .well {
+body.type-hotellier .well {
   background-color: transparent;
   border: 1px solid #c0c0c0;
   border-radius: 0px;
@@ -173,65 +155,53 @@ body.type-anonymous-user .well {
   padding: 19px;
 }
 body.type-hotellier .navbar-fixed-top .navbar-inner,
-body.type-anonymous-user .navbar-fixed-top .navbar-inner,
-body.type-hotellier .navbar-static-top .navbar-inner,
-body.type-anonymous-user .navbar-static-top .navbar-inner {
+body.type-hotellier .navbar-static-top .navbar-inner {
   box-shadow: none;
 }
-body.type-hotellier .navbar-fixed-top,
-body.type-anonymous-user .navbar-fixed-top {
+body.type-hotellier .navbar-fixed-top {
   position: relative;
 }
-body.type-hotellier #navbar,
-body.type-anonymous-user #navbar {
+body.type-hotellier #navbar {
   max-width: 1046px;
   margin-left: 10px;
   min-height: 20px;
 }
-body.type-hotellier .navbar-inverse,
-body.type-anonymous-user .navbar-inverse {
+body.type-hotellier .navbar-inverse {
   border-color: #c0c0c0;
   background-color: #003563;
   border-color: transparent;
 }
-body.type-hotellier .navbar-nav > li > a,
-body.type-anonymous-user .navbar-nav > li > a {
+body.type-hotellier .navbar-nav > li > a {
   padding-top: 7px;
   padding-bottom: 7px;
   line-height: 20px;
+  padding: 10px 15px;
 }
 body.type-hotellier .navbar .nav li.dropdown.open > .dropdown-toggle,
-body.type-anonymous-user .navbar .nav li.dropdown.open > .dropdown-toggle,
 body.type-hotellier .navbar .nav li.dropdown.active > .dropdown-toggle,
-body.type-anonymous-user .navbar .nav li.dropdown.active > .dropdown-toggle,
-body.type-hotellier .navbar .nav li.dropdown.open.active > .dropdown-toggle,
-body.type-anonymous-user .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+body.type-hotellier .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   background-color: #ffffff;
   color: #cd1239;
 }
 body.type-hotellier .navbar .nav > .active > a,
-body.type-anonymous-user .navbar .nav > .active > a,
 body.type-hotellier .navbar .nav > .active > a:hover,
-body.type-anonymous-user .navbar .nav > .active > a:hover,
-body.type-hotellier .navbar .nav > .active > a:focus,
-body.type-anonymous-user .navbar .nav > .active > a:focus {
+body.type-hotellier .navbar .nav > .active > a:focus {
   color: #ffffff;
   text-decoration: none;
   background-color: #dedede;
   box-shadow: none;
 }
-body.type-hotellier .navbar .nav li a.active-trail,
-body.type-anonymous-user .navbar .nav li a.active-trail {
+body.type-hotellier .navbar .nav li a.active-trail {
   background-color: #ffffff;
   color: #cd1239;
 }
-body.type-hotellier .footer.container,
-body.type-anonymous-user .footer.container {
+body.type-hotellier .footer.container {
   background-color: #a4062c;
   min-height: 65px;
   max-width: 1066px;
 }
-body.type-hotellier #block-block-3,
-body.type-anonymous-user #block-block-3 {
-  z-index: 3000;
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
 }

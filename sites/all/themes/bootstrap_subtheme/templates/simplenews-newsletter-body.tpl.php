@@ -29,6 +29,11 @@
 ?>
 
 <div class="newsletter-head">
+<<<<<<< HEAD
     <img height="119" border="0" width="1024" alt="Newsletter" src="http://www.cph-intranet.de/sites/default/files/newsletter/cph-header.png"></div>
+=======
+    <img height="119" border="0" width="1024" alt="Newsletter" src="http://www.cph-intranet.de/sites/default/files/newsletter/cph-header.png">  bbbbbbbbbbbb</div>
+
+>>>>>>> 66d9e7f2cc5f372af8ea10c5cd4c24f1f5427e8c
 <h2><?php print $title; ?></h2>
 <?php print render($build); ?>

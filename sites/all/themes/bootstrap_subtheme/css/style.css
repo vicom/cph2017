@@ -216,5 +216,9 @@ body.type-hotellier .footer.container {
   padding: 3px;
 }
 .view-notizen .col-lg-3 {
-  padding-left: 5px;
+  padding-left: 1px;
+  padding-left: 3px;
+}
+.addmargin3 {
+  margin: 3px;
 }

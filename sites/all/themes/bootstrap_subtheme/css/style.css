@@ -206,10 +206,10 @@ body.type-hotellier .footer.container {
   padding: 5px 5px;
 }
 .aufgaben-sichtbarkeit-notizzettel {
-  background-color: #ffff66;
+  background-color: #ffffff;
 }
 .aufgaben-sichtbarkeit-in-planung {
-  background-color: #ffffff;
+  background-color: #f4849b;
 }
 .view-notizen .thumbnail {
   margin: 12px;

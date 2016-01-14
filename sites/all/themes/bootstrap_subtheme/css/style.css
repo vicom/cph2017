@@ -205,6 +205,6 @@ body.type-hotellier .footer.container {
   display: block;
   padding: 5px 5px;
 }
-.aufgaben-sichtbarkeit-notizzettel {
+div.aufgaben-sichtbarkeit-notizzettel {
   background-color: #ffff66;
 }

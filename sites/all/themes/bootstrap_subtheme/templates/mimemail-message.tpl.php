@@ -32,9 +32,13 @@
   </head>
 
 
-  start
+ 
   <body id="mimemail-body" <?php if ($module && $key): print 'class="'. $module .'-'. $key .'"'; endif; ?>>
     <div id="center">
+    <div class="newsletter-head">
+sample!!
+    <img height="119" border="0" width="1024" alt="Newsletter" src="http://www.cph-intranet.de/cph_logo.png"></div>
+ start now
       <div id="main">
         <?php print $body ?>
       </div>

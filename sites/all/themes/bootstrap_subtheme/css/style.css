@@ -1,5 +1,5 @@
 body {
-  color: #384047;
+  color: #565656;
 }
 h1 {
   font-size: 32px;
@@ -203,7 +203,7 @@ body.type-hotellier .footer.container {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 5px 5px;
+  padding: 6px 5px;
 }
 .aufgaben-sichtbarkeit-notizzettel {
   background-color: #ffff42;
@@ -212,7 +212,8 @@ body.type-hotellier .footer.container {
   background-color: #ff9999;
 }
 .aufgaben-sichtbarkeit-hotelier-sichtbar {
-  background-color: #9aff9a;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
 }
 .view-notizen .thumbnail {
   margin: 12px;

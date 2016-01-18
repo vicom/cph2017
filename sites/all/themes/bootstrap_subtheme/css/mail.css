@@ -1,4 +1,6 @@
-@import "http://cdn.jsdelivr.net/bootstrap/3.0.2/css/bootstrap.min.css";
 h2 a {
   color: #green;
+}
+h2 {
+  color: #red;
 }

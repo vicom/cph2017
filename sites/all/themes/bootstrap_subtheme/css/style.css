@@ -226,3 +226,11 @@ body.type-hotellier .footer.container {
 .addmargin3 {
   margin: 3px;
 }
+
+div.newsletter-image {
+width: 200px;
+float: left;
+margin-right: 12px;
+margin-bottom: 6px
+}
+

@@ -27,6 +27,9 @@
       <!--
       <?php print $css ?>
       -->
+      <?php
+  drupal_add_css($directory.'/css/mail','theme');
+?>
     </style>
     <?php endif; ?>
   </head>
@@ -37,7 +40,7 @@
     <div id="center">
     <div class="newsletter-head">
 sample!!
-    <img height="119" border="0" width="1024" alt="Newsletter" src="http://www.cph-intranet.de/cph_logo.png"></div>
+    <img height="107" border="" width="191" alt="Newsletter too" src="http://www.cph-intranet.de/cph_logo.png"></div>
  start now
       <div id="main">
         <?php print $body ?>

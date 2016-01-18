@@ -29,8 +29,5 @@
 ?>
 
 <div class="newsletter-head">
-<<<<<<< HEAD
-    <img height="119" border="0" width="1024" alt="Newsletter" src="http://www.cph-intranet.de/cph_logo.png"></div>
-
 <h2><?php print $title; ?></h2>
 <?php print render($build); ?>

@@ -20,4 +20,7 @@ $vars['theme_hook_suggestion'] = 'page__'.$vars['node']->type;
 }
 }
 
+function bootstrap_subtheme_date_combo($variables) {
+  return theme('form_element', $variables);
+}
 ?>

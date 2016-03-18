@@ -29,5 +29,9 @@
 ?>
 
 <div class="newsletter-head">
+hhhhhhh
 <h2><?php print $title; ?></h2>
+body 
 <?php print render($build); ?>
+hier drunter
+<?php print views_embed_view('newsletter','block', $node->nid); ?>

@@ -29,3 +29,6 @@
 ?>
 <h2><?php print $title; ?></h2>
 <?php print render($build); ?>
+-------
+<?php print views_embed_view('newsletter','block', $node->nid); ?>
+-------

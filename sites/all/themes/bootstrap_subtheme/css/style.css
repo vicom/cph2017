@@ -32,7 +32,7 @@ div.form-type-checkboxes {
 }
 div#edit-top-buttons.form-actions.form-wrapper.form-group {
   position: absolute;
-  top: 0px;
+  top: 90px;
   background-color: #ffffff;
 }
 .form-control {
@@ -203,7 +203,7 @@ body.type-hotellier .footer.container {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 5px 4px;
+  padding: 6px 5px;
 }
 .aufgaben-sichtbarkeit-notizzettel {
   background-color: #ffff42;
@@ -226,15 +226,13 @@ body.type-hotellier .footer.container {
 .addmargin3 {
   margin: 3px;
 }
-
-div.newsletter-image {
-width: 200px;
-float: left;
-margin-right: 12px;
-margin-bottom: 6px
+.form-item-field-datum-beendet-und-0-value-date .control-label,
+.form-item-field-datum-und-0-value-date .control-label {
+  display: none;
 }
-
-
-.form-item-field-datum-beendet-und-0-value-date .control-label, .form-item-field-datum-und-0-value-date .control-label {
-display: none;
-}.page-node-edit h1.page-header {display: none;}
+.page-node-edit h1.page-header {
+  display: none;
+}
+.starter45 {
+  margin-top: 45px;
+}

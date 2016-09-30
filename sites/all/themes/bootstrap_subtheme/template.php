@@ -5,10 +5,16 @@
  * template.php
  */
 
+
 function bootstrap_subtheme_preprocess_html(&$vars) {
   foreach($vars['user']->roles as $role){
     $vars['classes_array'][] = 'type-' . drupal_html_class($role);
   }
+  $node = menu_get_object();
+	
+	if ($node && $node->nid) {
+		$vars['theme_hook_suggestions'][] = 'html__' . $node->type;
+	}
 }
  // add responsive image to img
 function bootstrap_subtheme_preprocess_image_style(&$vars) {
@@ -23,4 +29,8 @@ $vars['theme_hook_suggestion'] = 'page__'.$vars['node']->type;
 function bootstrap_subtheme_date_combo($variables) {
   return theme('form_element', $variables);
 }
+
+
+
+
 ?>

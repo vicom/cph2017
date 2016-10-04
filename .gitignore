@@ -16,6 +16,8 @@ sites/default/settings.php
 # Ignore paths that contain generated content.
 files/
 sites/*/files
+/INSTALL.mysql.txt
+/INSTALL.pgsql.txt
 sites/*/private
 # Ignore default text files
 robots.txt
@@ -29,3 +31,4 @@ robots.txt
 sites/all/README.txt
 sites/all/modules/README.txt
 sites/all/themes/README.txt
+sites/all/modules/phpmailer*
